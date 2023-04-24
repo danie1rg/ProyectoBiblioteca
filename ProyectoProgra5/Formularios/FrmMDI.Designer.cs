@@ -30,19 +30,23 @@
         {
             this.MnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.MnuGestiones = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestiónDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnGestionUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeAutoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeLibrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.gestiónDeUsuarioRolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoDePersonaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnRolUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtntipoDePersona = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuProcesos = new System.Windows.Forms.ToolStripMenuItem();
             this.rEGISTROSDEPRESTAMOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.LblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.MnuPrincipal.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MnuPrincipal
@@ -66,24 +70,24 @@
             // MnuGestiones
             // 
             this.MnuGestiones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestiónDeUsuariosToolStripMenuItem,
+            this.BtnGestionUsuarios,
             this.gestiónDeToolStripMenuItem,
             this.gestiónDeAutoresToolStripMenuItem,
             this.gestiónDeLibrosToolStripMenuItem,
             this.toolStripSeparator1,
-            this.gestiónDeUsuarioRolToolStripMenuItem,
-            this.tipoDePersonaToolStripMenuItem});
+            this.BtnRolUsuario,
+            this.BtntipoDePersona});
             this.MnuGestiones.ForeColor = System.Drawing.SystemColors.Control;
             this.MnuGestiones.Name = "MnuGestiones";
             this.MnuGestiones.Size = new System.Drawing.Size(127, 32);
             this.MnuGestiones.Text = "GESTIONES";
             // 
-            // gestiónDeUsuariosToolStripMenuItem
+            // BtnGestionUsuarios
             // 
-            this.gestiónDeUsuariosToolStripMenuItem.Name = "gestiónDeUsuariosToolStripMenuItem";
-            this.gestiónDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(273, 32);
-            this.gestiónDeUsuariosToolStripMenuItem.Text = "Gestión de Usuarios";
-            this.gestiónDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeUsuariosToolStripMenuItem_Click);
+            this.BtnGestionUsuarios.Name = "BtnGestionUsuarios";
+            this.BtnGestionUsuarios.Size = new System.Drawing.Size(273, 32);
+            this.BtnGestionUsuarios.Text = "Gestión de Usuarios";
+            this.BtnGestionUsuarios.Click += new System.EventHandler(this.gestiónDeUsuariosToolStripMenuItem_Click);
             // 
             // gestiónDeToolStripMenuItem
             // 
@@ -109,18 +113,19 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(270, 6);
             // 
-            // gestiónDeUsuarioRolToolStripMenuItem
+            // BtnRolUsuario
             // 
-            this.gestiónDeUsuarioRolToolStripMenuItem.Name = "gestiónDeUsuarioRolToolStripMenuItem";
-            this.gestiónDeUsuarioRolToolStripMenuItem.Size = new System.Drawing.Size(273, 32);
-            this.gestiónDeUsuarioRolToolStripMenuItem.Text = "Usuario Rol";
-            this.gestiónDeUsuarioRolToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeUsuarioRolToolStripMenuItem_Click);
+            this.BtnRolUsuario.Name = "BtnRolUsuario";
+            this.BtnRolUsuario.Size = new System.Drawing.Size(273, 32);
+            this.BtnRolUsuario.Text = "Usuario Rol";
+            this.BtnRolUsuario.Click += new System.EventHandler(this.gestiónDeUsuarioRolToolStripMenuItem_Click);
             // 
-            // tipoDePersonaToolStripMenuItem
+            // BtntipoDePersona
             // 
-            this.tipoDePersonaToolStripMenuItem.Name = "tipoDePersonaToolStripMenuItem";
-            this.tipoDePersonaToolStripMenuItem.Size = new System.Drawing.Size(273, 32);
-            this.tipoDePersonaToolStripMenuItem.Text = "Tipo de Persona";
+            this.BtntipoDePersona.Name = "BtntipoDePersona";
+            this.BtntipoDePersona.Size = new System.Drawing.Size(273, 32);
+            this.BtntipoDePersona.Text = "Tipo de Persona";
+            this.BtntipoDePersona.Click += new System.EventHandler(this.tipoDePersonaToolStripMenuItem_Click);
             // 
             // MnuProcesos
             // 
@@ -159,11 +164,37 @@
             this.MnuAcercaDe.Size = new System.Drawing.Size(127, 32);
             this.MnuAcercaDe.Text = "ACERCA DE";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.LblUsuario});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 535);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(904, 31);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(66, 25);
+            this.toolStripStatusLabel1.Text = "Usuario: ";
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(77, 25);
+            this.LblUsuario.Text = "Usuario";
+            // 
             // FrmMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 566);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MnuPrincipal);
             this.Name = "FrmMDI";
             this.Text = "Sistema Biblioteca";
@@ -172,6 +203,8 @@
             this.Load += new System.EventHandler(this.FrmMDI_Load);
             this.MnuPrincipal.ResumeLayout(false);
             this.MnuPrincipal.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,17 +214,20 @@
 
         private System.Windows.Forms.MenuStrip MnuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem MnuGestiones;
-        private System.Windows.Forms.ToolStripMenuItem gestiónDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BtnGestionUsuarios;
         private System.Windows.Forms.ToolStripMenuItem gestiónDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónDeAutoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónDeLibrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem gestiónDeUsuarioRolToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipoDePersonaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BtnRolUsuario;
+        private System.Windows.Forms.ToolStripMenuItem BtntipoDePersona;
         private System.Windows.Forms.ToolStripMenuItem MnuProcesos;
         private System.Windows.Forms.ToolStripMenuItem rEGISTROSDEPRESTAMOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MnuReportes;
         private System.Windows.Forms.ToolStripMenuItem MnuSalir;
         private System.Windows.Forms.ToolStripMenuItem MnuAcercaDe;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel LblUsuario;
     }
 }

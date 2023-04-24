@@ -17,5 +17,10 @@ namespace ProyectoProgra5
 
         public static Formularios.FrmGestionUsuarioRol MiGestionRolUsuario = new Formularios.FrmGestionUsuarioRol();
 
+        public static Formularios.FrmGestionTipoDePersona MiGestionTipoDePersona = new Formularios.FrmGestionTipoDePersona();
+
+        public static Logica.Models.Usuario MiUsuarioGlobal = new Logica.Models.Usuario();
+
+
     }
 }

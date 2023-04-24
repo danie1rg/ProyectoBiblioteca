@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoProgra5.Formularios
@@ -29,7 +22,22 @@ namespace ProyectoProgra5.Formularios
 
         private void FrmMDI_Load(object sender, EventArgs e)
         {
+            string InfoUsuario = string.Format("{0}  ({1})",
+                                               Globales.MiUsuarioGlobal.UsuarioNombre,
+                                               Globales.MiUsuarioGlobal.MiUsuarioRol.Descripcion);
 
+            LblUsuario.Text = InfoUsuario;
+
+            switch (Globales.MiUsuarioGlobal.MiUsuarioRol.UsuarioRolId)
+            {
+                case 1:
+                    break;
+                case 2:
+                    BtnGestionUsuarios.Visible = false;
+                    BtnRolUsuario.Visible = false;
+                    BtntipoDePersona.Visible = false;
+                    break;
+            }
         }
 
         private void FrmMDI_FormClosed(object sender, FormClosedEventArgs e)
@@ -62,6 +70,16 @@ namespace ProyectoProgra5.Formularios
                 Globales.MiGestionRolUsuario.Show();
             }
 
+        }
+
+        private void tipoDePersonaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiGestionTipoDePersona.Visible)
+            {
+                Globales.MiGestionTipoDePersona = new FrmGestionTipoDePersona();
+
+                Globales.MiGestionTipoDePersona.Show();
+            }
         }
     }
 }

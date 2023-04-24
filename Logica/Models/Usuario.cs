@@ -227,6 +227,45 @@ namespace Logica.Models
             return R;
         }
 
+        public Usuario ValidarUsuario(string pEmail, string pContrasennia)
+        {
+
+            Usuario R = new Usuario();
+
+            Conexion MiCnn = new Conexion();
+
+            Crypto crypto = new Crypto();
+            string ContrasenniaEncriptada = crypto.EncriptarEnUnSentido(pContrasennia);
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@usuario", pEmail));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@password", ContrasenniaEncriptada));
+
+            DataTable dt = new DataTable();
+
+            dt = MiCnn.EjecutarSELECT("SPUsuarioValidarIngreso");
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                DataRow dr = dt.Rows[0];
+
+                R.UsuarioId = Convert.ToInt32(dr["UsuarioID"]);
+                R.UsuarioNombre = Convert.ToString(dr["NombreUsuario"]);
+
+
+                R.Correo = Convert.ToString(dr["Correo"]);
+
+                R.Contrasena = string.Empty;
+
+                //composiciones
+                R.MiUsuarioRol.UsuarioRolId = Convert.ToInt32(dr["UsuarioRolID"]);
+                R.MiUsuarioRol.Descripcion = Convert.ToString(dr["descripcion"]);
+
+            }
+
+            return R;
+        }
+
+
 
 
 

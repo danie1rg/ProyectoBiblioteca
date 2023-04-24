@@ -75,32 +75,7 @@ namespace ProyectoProgra5.Formularios
             BtnModificar.Enabled = true;
         }
 
-        private void DtVista_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (DtVista.SelectedRows.Count == 1)
-            {
-                DataGridViewRow Mifila = DtVista.SelectedRows[0];
 
-                int IdUsuario = Convert.ToInt32(Mifila.Cells["CID"].Value);
-
-                MiUsuarioRolLocal = new Logica.Models.UsuarioRol();
-
-                MiUsuarioRolLocal.UsuarioRolId = IdUsuario;
-
-                MiUsuarioRolLocal = MiUsuarioRolLocal.ConsultarPorIDRetornaUsuarioRol(); 
-
-                if (MiUsuarioRolLocal != null && MiUsuarioRolLocal.UsuarioRolId > 0)
-                {
-                    TxtDescripcion.Text = MiUsuarioRolLocal.Descripcion;
-                    TxtCod.Text = Convert.ToString(MiUsuarioRolLocal.UsuarioRolId);
-
-                    ActivarEditarEliminar();
-                }
-
-            }
-        }
-
-  
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             if (ValidarDatosDigitados())
@@ -167,5 +142,32 @@ namespace ProyectoProgra5.Formularios
         {
             this.Close();
         }
+
+        private void DtVista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DtVista.SelectedRows.Count == 1)
+            {
+                DataGridViewRow Mifila = DtVista.SelectedRows[0];
+
+                int IdUsuario = Convert.ToInt32(Mifila.Cells["CID"].Value);
+
+                MiUsuarioRolLocal = new Logica.Models.UsuarioRol();
+
+                MiUsuarioRolLocal.UsuarioRolId = IdUsuario;
+
+                MiUsuarioRolLocal = MiUsuarioRolLocal.ConsultarPorIDRetornaUsuarioRol();
+
+                if (MiUsuarioRolLocal != null && MiUsuarioRolLocal.UsuarioRolId > 0)
+                {
+                    TxtDescripcion.Text = MiUsuarioRolLocal.Descripcion;
+                    TxtCod.Text = Convert.ToString(MiUsuarioRolLocal.UsuarioRolId);
+
+                    ActivarEditarEliminar();
+                }
+
+            }
+        }
+
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ProyectoProgra5.Formularios
 {
-    partial class FrmGestionUsuarioRol
+    partial class FrmGestionTipoDePersona
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.DtVista = new System.Windows.Forms.DataGridView();
-            this.CID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTipoPersonaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cdescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.TxtCod = new System.Windows.Forms.TextBox();
-            this.BtnLimpiar = new System.Windows.Forms.Button();
-            this.TxtDescripcion = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.TxtCod = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtDescripcion = new System.Windows.Forms.TextBox();
+            this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
+            this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DtVista)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -50,9 +50,9 @@
             this.DtVista.AllowUserToDeleteRows = false;
             this.DtVista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtVista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CID,
-            this.CDescripcion});
-            this.DtVista.Location = new System.Drawing.Point(26, 28);
+            this.CTipoPersonaID,
+            this.Cdescripcion});
+            this.DtVista.Location = new System.Drawing.Point(12, 22);
             this.DtVista.MultiSelect = false;
             this.DtVista.Name = "DtVista";
             this.DtVista.ReadOnly = true;
@@ -60,142 +60,139 @@
             this.DtVista.RowHeadersWidth = 51;
             this.DtVista.RowTemplate.Height = 24;
             this.DtVista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtVista.Size = new System.Drawing.Size(626, 176);
+            this.DtVista.Size = new System.Drawing.Size(645, 214);
             this.DtVista.TabIndex = 0;
             this.DtVista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtVista_CellClick);
             // 
-            // CID
+            // CTipoPersonaID
             // 
-            this.CID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CID.DataPropertyName = "ID";
-            this.CID.HeaderText = "Cód. Rol de Usuario";
-            this.CID.MinimumWidth = 6;
-            this.CID.Name = "CID";
-            this.CID.ReadOnly = true;
+            this.CTipoPersonaID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CTipoPersonaID.DataPropertyName = "TipoPersonaID";
+            this.CTipoPersonaID.HeaderText = "Código";
+            this.CTipoPersonaID.MinimumWidth = 6;
+            this.CTipoPersonaID.Name = "CTipoPersonaID";
+            this.CTipoPersonaID.ReadOnly = true;
             // 
-            // CDescripcion
+            // Cdescripcion
             // 
-            this.CDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CDescripcion.DataPropertyName = "Descripcion";
-            this.CDescripcion.HeaderText = "Descripción";
-            this.CDescripcion.MinimumWidth = 6;
-            this.CDescripcion.Name = "CDescripcion";
-            this.CDescripcion.ReadOnly = true;
+            this.Cdescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cdescripcion.DataPropertyName = "descripcion";
+            this.Cdescripcion.HeaderText = "Descripción";
+            this.Cdescripcion.MinimumWidth = 6;
+            this.Cdescripcion.Name = "Cdescripcion";
+            this.Cdescripcion.ReadOnly = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.TxtCod);
             this.groupBox1.Controls.Add(this.BtnLimpiar);
             this.groupBox1.Controls.Add(this.TxtDescripcion);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.TxtCod);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(26, 227);
+            this.groupBox1.Location = new System.Drawing.Point(12, 256);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(635, 176);
+            this.groupBox1.Size = new System.Drawing.Size(502, 174);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Detalles de Rol de Usuario";
+            this.groupBox1.Text = "Detalles";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Código";
             // 
             // TxtCod
             // 
-            this.TxtCod.Location = new System.Drawing.Point(207, 34);
+            this.TxtCod.Location = new System.Drawing.Point(107, 45);
             this.TxtCod.Name = "TxtCod";
             this.TxtCod.ReadOnly = true;
-            this.TxtCod.Size = new System.Drawing.Size(162, 30);
-            this.TxtCod.TabIndex = 4;
+            this.TxtCod.Size = new System.Drawing.Size(100, 30);
+            this.TxtCod.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 98);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Descripción";
+            // 
+            // TxtDescripcion
+            // 
+            this.TxtDescripcion.Location = new System.Drawing.Point(143, 93);
+            this.TxtDescripcion.Name = "TxtDescripcion";
+            this.TxtDescripcion.Size = new System.Drawing.Size(202, 30);
+            this.TxtDescripcion.TabIndex = 3;
             // 
             // BtnLimpiar
             // 
             this.BtnLimpiar.BackColor = System.Drawing.Color.DarkCyan;
             this.BtnLimpiar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnLimpiar.Location = new System.Drawing.Point(518, 126);
+            this.BtnLimpiar.Location = new System.Drawing.Point(405, 130);
             this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(108, 37);
-            this.BtnLimpiar.TabIndex = 3;
+            this.BtnLimpiar.Size = new System.Drawing.Size(91, 38);
+            this.BtnLimpiar.TabIndex = 4;
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.UseVisualStyleBackColor = false;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
-            // TxtDescripcion
-            // 
-            this.TxtDescripcion.Location = new System.Drawing.Point(130, 93);
-            this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(239, 30);
-            this.TxtDescripcion.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Descripción";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cód. Rol de Usuario";
-            // 
             // BtnAgregar
             // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.Lime;
-            this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnAgregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnAgregar.Location = new System.Drawing.Point(26, 409);
+            this.BtnAgregar.Location = new System.Drawing.Point(520, 270);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(117, 34);
+            this.BtnAgregar.Size = new System.Drawing.Size(137, 45);
             this.BtnAgregar.TabIndex = 2;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // BtnModificar
+            // BtnEditar
             // 
-            this.BtnModificar.BackColor = System.Drawing.Color.Goldenrod;
-            this.BtnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnModificar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnModificar.Location = new System.Drawing.Point(156, 409);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(114, 34);
-            this.BtnModificar.TabIndex = 3;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = false;
-            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            this.BtnEditar.BackColor = System.Drawing.Color.Orange;
+            this.BtnEditar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnEditar.Location = new System.Drawing.Point(520, 321);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(137, 45);
+            this.BtnEditar.TabIndex = 3;
+            this.BtnEditar.Text = "Modificar";
+            this.BtnEditar.UseVisualStyleBackColor = false;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnCancelar
             // 
             this.BtnCancelar.BackColor = System.Drawing.Color.Red;
-            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnCancelar.Location = new System.Drawing.Point(560, 409);
+            this.BtnCancelar.Location = new System.Drawing.Point(520, 372);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(114, 34);
+            this.BtnCancelar.Size = new System.Drawing.Size(137, 45);
             this.BtnCancelar.TabIndex = 4;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // FrmGestionUsuarioRol
+            // FrmGestionTipoDePersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 452);
+            this.ClientSize = new System.Drawing.Size(669, 445);
             this.Controls.Add(this.BtnCancelar);
-            this.Controls.Add(this.BtnModificar);
+            this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DtVista);
             this.MaximizeBox = false;
-            this.Name = "FrmGestionUsuarioRol";
+            this.Name = "FrmGestionTipoDePersona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestión Rol de Usuario";
-            this.Load += new System.EventHandler(this.FrmGestionUsuarioRol_Load);
+            this.Text = "Gestión Tipo de Persona";
+            this.Load += new System.EventHandler(this.FrmGestionTipoDePersona_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtVista)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -206,16 +203,16 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DtVista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTipoPersonaID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cdescripcion;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button BtnLimpiar;
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtCod;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.Button BtnModificar;
+        private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnCancelar;
-        private System.Windows.Forms.TextBox TxtCod;
     }
 }
