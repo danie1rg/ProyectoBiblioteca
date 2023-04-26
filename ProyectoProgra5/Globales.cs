@@ -21,6 +21,8 @@ namespace ProyectoProgra5
 
         public static Logica.Models.Usuario MiUsuarioGlobal = new Logica.Models.Usuario();
 
+        public static Formularios.FrmRegistroPrestamo MiFormRegistroPrestamo = new Formularios.FrmRegistroPrestamo();
+
 
     }
 }

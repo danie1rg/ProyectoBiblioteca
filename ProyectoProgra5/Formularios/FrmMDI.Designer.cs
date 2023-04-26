@@ -141,6 +141,7 @@
             this.rEGISTROSDEPRESTAMOSToolStripMenuItem.Name = "rEGISTROSDEPRESTAMOSToolStripMenuItem";
             this.rEGISTROSDEPRESTAMOSToolStripMenuItem.Size = new System.Drawing.Size(342, 32);
             this.rEGISTROSDEPRESTAMOSToolStripMenuItem.Text = "REGISTROS DE PRESTAMOS";
+            this.rEGISTROSDEPRESTAMOSToolStripMenuItem.Click += new System.EventHandler(this.rEGISTROSDEPRESTAMOSToolStripMenuItem_Click);
             // 
             // MnuReportes
             // 
