@@ -17,12 +17,6 @@ namespace ProyectoProgra5.Formularios
             InitializeComponent();
         }
 
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-       
 
         private void BtnVer_MouseDown(object sender, MouseEventArgs e)
         {
@@ -83,15 +77,16 @@ namespace ProyectoProgra5.Formularios
         private void BtnIngresoDirecto_Click(object sender, EventArgs e)
         {
             Globales.MiFormPrincipal.Show();
-            this.Hide();
+            this.Show();
         }
 
         private void FrmLogin_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Shift & e.Alt & e.KeyCode == Keys.A)
+            if (e.Shift && e.Alt && e.KeyCode == Keys.A)
             {
-                //si presionamos shift + tab + a
+                //si presionamos shit + alt + a
                 BtnIngresoDirecto.Visible = true;
+
             }
 
         }
