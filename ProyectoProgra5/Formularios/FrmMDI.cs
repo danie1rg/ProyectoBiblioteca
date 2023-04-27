@@ -81,15 +81,5 @@ namespace ProyectoProgra5.Formularios
                 Globales.MiGestionTipoDePersona.Show();
             }
         }
-
-        private void rEGISTROSDEPRESTAMOSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!Globales.MiFormRegistroPrestamo.Visible)
-            {
-                Globales.MiFormRegistroPrestamo = new FrmRegistroPrestamo();
-
-                Globales.MiFormRegistroPrestamo.Show();
-            }
-        }
     }
 }
