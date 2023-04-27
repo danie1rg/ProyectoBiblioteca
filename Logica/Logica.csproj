@@ -44,8 +44,11 @@
   <ItemGroup>
     <Compile Include="Crypto.cs" />
     <Compile Include="Models\Autores.cs" />
+    <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Libro.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Prestamo.cs" />
+    <Compile Include="Models\PrestamoDetalle.cs" />
     <Compile Include="Models\TipoDePersona.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioRol.cs" />
