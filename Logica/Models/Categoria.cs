@@ -11,7 +11,7 @@ namespace Logica.Models
 {
     public class Categoria
     {
-        public string ClaveCategoria { get; set; }
+        public int ClaveCategoria { get; set; }
         public string Descripcion { get; set; }
         public bool Activo { get; set; }
 
@@ -21,7 +21,6 @@ namespace Logica.Models
 
             Conexion MiCnn = new Conexion();
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@Clave", this.ClaveCategoria));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Descripcion", this.Descripcion));
            
             int resultado = MiCnn.EjecutarInsertUpdateDelete("SPCategoriaAgregar");
@@ -57,6 +56,28 @@ namespace Logica.Models
             DataTable dt = new DataTable();
 
             dt = MiCnn.EjecutarSELECT("SPCategoriaConsultarPorClave");
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                R = true;
+
+            }
+
+            return R;
+        }
+
+        public bool ConsultarPorGenero()
+        {
+            bool R = false;
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Genero", this.ClaveCategoria));
+
+
+            DataTable dt = new DataTable();
+
+            dt = MiCnn.EjecutarSELECT("SPCategoriaConsultarPorGenero");
 
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -103,7 +124,7 @@ namespace Logica.Models
 
                 DataRow dr = dt.Rows[0];
 
-                R.ClaveCategoria = Convert.ToString(dr["ClaveCategoria"]);
+                R.ClaveCategoria = Convert.ToInt32(dr["ClaveCategoria"]);
                 R.Descripcion = Convert.ToString(dr["Descripcion"]); 
 
             }

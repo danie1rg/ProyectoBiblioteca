@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\FrmBuscarPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarPersona.designer.cs">
+      <DependentUpon>FrmBuscarPersona.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmGestionAutor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     <Compile Include="Formularios\FrmGestionUsuarioRol.Designer.cs">
       <DependentUpon>FrmGestionUsuarioRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmGestionLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmGestionLibro.Designer.cs">
+      <DependentUpon>FrmGestionLibro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,10 +106,25 @@
     <Compile Include="Formularios\FrmMDI.Designer.cs">
       <DependentUpon>FrmMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmPrestamoDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPrestamoDetalle.Designer.cs">
+      <DependentUpon>FrmPrestamoDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmRegistroPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRegistroPrestamo.Designer.cs">
+      <DependentUpon>FrmRegistroPrestamo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
+    <EmbeddedResource Include="Formularios\FrmBuscarPersona.resx">
+      <DependentUpon>FrmBuscarPersona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmGestionAutor.resx">
       <DependentUpon>FrmGestionAutor.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,11 +143,20 @@
     <EmbeddedResource Include="Formularios\FrmGestionUsuarioRol.resx">
       <DependentUpon>FrmGestionUsuarioRol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmGestionLibro.resx">
+      <DependentUpon>FrmGestionLibro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMDI.resx">
       <DependentUpon>FrmMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPrestamoDetalle.resx">
+      <DependentUpon>FrmPrestamoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRegistroPrestamo.resx">
+      <DependentUpon>FrmRegistroPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

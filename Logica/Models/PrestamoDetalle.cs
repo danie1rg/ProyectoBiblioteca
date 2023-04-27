@@ -40,7 +40,7 @@ namespace Logica.Models
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Cantidad", this.cantidad));
 
-            int resultado = MiCnn.EjecutarInsertUpdateDelete("SPPrestamoDetallesAgregar");
+            int resultado = MiCnn.EjecutarSELECTEscalar("SPPrestamoDetallesAgregar");
 
             if (resultado > 0)
             {
@@ -56,7 +56,7 @@ namespace Logica.Models
             bool R = false;
             Conexion MiCnn = new Conexion();
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClavePresamo", this.MiPrestamo.ClavePrestamo));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClavePrestamo", this.MiPrestamo.ClavePrestamo));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveLibro", this.Milibro.ClaveLibro));
 
 

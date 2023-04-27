@@ -11,7 +11,7 @@ namespace Logica.Models
 {
     public class Libro
     {
-        public string ClaveLibro { get; set; }
+        public int ClaveLibro { get; set; }
         public string Titulo { get; set; }
         public int CantidadPaginas { get; set; }
         public bool Activo { get; set; }
@@ -32,6 +32,8 @@ namespace Logica.Models
             MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveLibro", this.ClaveLibro));
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Titulo", this.Titulo));
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@CantidadPaginas", this.CantidadPaginas));
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveCategoria", this.MiCategoria.ClaveCategoria));
 
@@ -54,6 +56,23 @@ namespace Logica.Models
             Conexion MiCnn = new Conexion();
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Clave", this.ClaveLibro));
+
+            DataTable consulta = new DataTable();
+            consulta = MiCnn.EjecutarSELECT("SPLibroConsultarPorClave");
+
+            if (consulta != null && consulta.Rows.Count > 0)
+            {
+                R = true;
+            }
+            return R;
+        }
+
+        public bool ConsultarPorTituloLibro()
+        {
+            bool R = false;
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Titulo", this.Titulo));
 
             DataTable consulta = new DataTable();
             consulta = MiCnn.EjecutarSELECT("SPLibroConsultarPorClave");
@@ -104,7 +123,7 @@ namespace Logica.Models
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Clave", this.ClaveLibro));
 
-            //necesito un datatable para capturar la info del usuario 
+      
             DataTable dt = new DataTable();
 
             dt = MiCnn.EjecutarSELECT("SPLibroConsultarPorClave");
@@ -114,17 +133,17 @@ namespace Logica.Models
 
                 DataRow dr = dt.Rows[0];
 
-                R.ClaveLibro = Convert.ToString(dr["ClaveLibro"]);
+                R.ClaveLibro = Convert.ToInt32(dr["ClaveLibro"]);
                 R.Titulo = Convert.ToString(dr["Titulo"]);
 
 
                 R.CantidadPaginas = Convert.ToInt32(dr["CantidadPaginas"]);
 
                 //composiciones
-                R.MiAutor.claveAutor = Convert.ToString(dr["ClaveAutor"]);
+                R.MiAutor.claveAutor = Convert.ToInt32(dr["ClaveAutor"]);
                 R.MiAutor.nombre = Convert.ToString(dr["Nombre"]);
 
-                R.MiCategoria.ClaveCategoria = Convert.ToString(dr["ClaveCategoria"]);
+                R.MiCategoria.ClaveCategoria = Convert.ToInt32(dr["ClaveCategoria"]);
                 R.MiCategoria.Descripcion = Convert.ToString(dr["Descripcion"]);
 
             }
@@ -147,8 +166,6 @@ namespace Logica.Models
             MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveCategoria", this.MiCategoria.ClaveCategoria));
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveAutor", this.MiAutor.claveAutor));
-
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveLibro", this.ClaveLibro));
 
             int resultado = MiCnn.EjecutarInsertUpdateDelete("SPLibroEditar");
 

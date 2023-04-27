@@ -11,7 +11,7 @@ namespace Logica.Models
 {
     public class Autor
     {
-        public string claveAutor { get; set; }
+        public int claveAutor { get; set; }
         public string nombre { get; set; }
         public string nacionalidad { get; set; }
 
@@ -23,9 +23,8 @@ namespace Logica.Models
 
             Conexion MiCnn = new Conexion();
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@Clave", this.claveAutor));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Nombre", this.nombre));
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@Cedula", this.nacionalidad));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Nacionalidad", this.nacionalidad));
 
             int resultado = MiCnn.EjecutarInsertUpdateDelete("SPAutorAgregar");
 
@@ -37,11 +36,13 @@ namespace Logica.Models
             return R;
         }
 
-        public DataTable Listar()
+        public DataTable Listar(string pFiltroBusqueda)
         {
             DataTable R = new DataTable();
 
             Conexion conexion = new Conexion();
+
+            conexion.ListaDeParametros.Add(new SqlParameter("@filtroBusqueda", pFiltroBusqueda));
 
             R = conexion.EjecutarSELECT("SPAutorListar");
 
@@ -60,6 +61,28 @@ namespace Logica.Models
             DataTable dt = new DataTable();
 
             dt = MiCnn.EjecutarSELECT("SPAutorConsultarPorClave");
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                R = true;
+
+            }
+
+            return R;
+        }
+
+        public bool ConsultarPorNombre()
+        {
+            bool R = false;
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Nombre", this.nombre));
+
+
+            DataTable dt = new DataTable();
+
+            dt = MiCnn.EjecutarSELECT("SPAutorConsultarPorNombre");
 
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -107,7 +130,7 @@ namespace Logica.Models
 
                 DataRow dr = dt.Rows[0];
 
-                R.claveAutor = Convert.ToString(dr["ClaveAutor"]);
+                R.claveAutor = Convert.ToInt32(dr["ClaveAutor"]);
                 R.nombre = Convert.ToString(dr["Nombre"]);
                 R.nacionalidad = Convert.ToString(dr["Nacionalidad"]);
 

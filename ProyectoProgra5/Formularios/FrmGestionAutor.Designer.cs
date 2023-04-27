@@ -43,6 +43,8 @@
             this.CClaveAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CNacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaProveedor)).BeginInit();
             this.SuspendLayout();
@@ -165,7 +167,7 @@
             this.CClaveAutor,
             this.CNombre,
             this.CNacionalidad});
-            this.DgvListaProveedor.Location = new System.Drawing.Point(12, 28);
+            this.DgvListaProveedor.Location = new System.Drawing.Point(12, 41);
             this.DgvListaProveedor.MultiSelect = false;
             this.DgvListaProveedor.Name = "DgvListaProveedor";
             this.DgvListaProveedor.ReadOnly = true;
@@ -198,11 +200,33 @@
             this.CNacionalidad.ReadOnly = true;
             this.CNacionalidad.Width = 250;
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.ForeColor = System.Drawing.Color.DarkGreen;
+            this.txtBuscar.Location = new System.Drawing.Point(182, 12);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(358, 20);
+            this.txtBuscar.TabIndex = 12;
+            this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(106, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Buscar";
+            // 
             // FrmGestionAutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 490);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.DgvListaProveedor);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnCancelar);
@@ -217,6 +241,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaProveedor)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -237,5 +262,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CClaveAutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn CNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn CNacionalidad;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label1;
     }
 }
