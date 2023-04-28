@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DgvListaProveedor = new System.Windows.Forms.DataGridView();
+            this.DgvListaCategoria = new System.Windows.Forms.DataGridView();
             this.CClaveCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,27 +38,27 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
-            this.BtnCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvListaProveedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaCategoria)).BeginInit();
             this.SuspendLayout();
             // 
-            // DgvListaProveedor
+            // DgvListaCategoria
             // 
-            this.DgvListaProveedor.AllowUserToAddRows = false;
-            this.DgvListaProveedor.AllowUserToDeleteRows = false;
-            this.DgvListaProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvListaProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvListaCategoria.AllowUserToAddRows = false;
+            this.DgvListaCategoria.AllowUserToDeleteRows = false;
+            this.DgvListaCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvListaCategoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CClaveCategoria,
             this.CDescripcion});
-            this.DgvListaProveedor.Location = new System.Drawing.Point(32, 12);
-            this.DgvListaProveedor.MultiSelect = false;
-            this.DgvListaProveedor.Name = "DgvListaProveedor";
-            this.DgvListaProveedor.ReadOnly = true;
-            this.DgvListaProveedor.RowHeadersVisible = false;
-            this.DgvListaProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListaProveedor.Size = new System.Drawing.Size(437, 252);
-            this.DgvListaProveedor.TabIndex = 1;
-            this.DgvListaProveedor.VirtualMode = true;
+            this.DgvListaCategoria.Location = new System.Drawing.Point(32, 12);
+            this.DgvListaCategoria.MultiSelect = false;
+            this.DgvListaCategoria.Name = "DgvListaCategoria";
+            this.DgvListaCategoria.ReadOnly = true;
+            this.DgvListaCategoria.RowHeadersVisible = false;
+            this.DgvListaCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvListaCategoria.Size = new System.Drawing.Size(437, 252);
+            this.DgvListaCategoria.TabIndex = 1;
+            this.DgvListaCategoria.VirtualMode = true;
+            this.DgvListaCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaCategoria_CellClick);
             // 
             // CClaveCategoria
             // 
@@ -89,6 +89,7 @@
             // 
             this.txtClave.Location = new System.Drawing.Point(82, 283);
             this.txtClave.Name = "txtClave";
+            this.txtClave.ReadOnly = true;
             this.txtClave.Size = new System.Drawing.Size(118, 26);
             this.txtClave.TabIndex = 3;
             // 
@@ -103,24 +104,26 @@
             // 
             // TxtGenero
             // 
-            this.TxtGenero.Location = new System.Drawing.Point(322, 283);
+            this.TxtGenero.Location = new System.Drawing.Point(302, 283);
             this.TxtGenero.Multiline = true;
             this.TxtGenero.Name = "TxtGenero";
             this.TxtGenero.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TxtGenero.Size = new System.Drawing.Size(147, 26);
+            this.TxtGenero.Size = new System.Drawing.Size(167, 26);
             this.TxtGenero.TabIndex = 5;
+            this.TxtGenero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtGenero_KeyPress);
             // 
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnAgregar.Location = new System.Drawing.Point(16, 332);
+            this.BtnAgregar.Location = new System.Drawing.Point(32, 331);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(100, 39);
             this.BtnAgregar.TabIndex = 6;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click_1);
             // 
             // BtnEditar
             // 
@@ -133,37 +136,26 @@
             this.BtnEditar.TabIndex = 6;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = false;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnLimpiar
             // 
             this.BtnLimpiar.BackColor = System.Drawing.Color.CadetBlue;
             this.BtnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpiar.Location = new System.Drawing.Point(136, 332);
+            this.BtnLimpiar.Location = new System.Drawing.Point(201, 331);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(100, 39);
             this.BtnLimpiar.TabIndex = 6;
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.RosyBrown;
-            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelar.Location = new System.Drawing.Point(254, 332);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(100, 39);
-            this.BtnCancelar.TabIndex = 6;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click_1);
             // 
             // FrmGestionCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 383);
-            this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnAgregar);
@@ -171,14 +163,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DgvListaProveedor);
+            this.Controls.Add(this.DgvListaCategoria);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimizeBox = false;
             this.Name = "FrmGestionCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión Categoría";
-            ((System.ComponentModel.ISupportInitialize)(this.DgvListaProveedor)).EndInit();
+            this.Load += new System.EventHandler(this.FrmGestionCategoria_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,7 +179,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DgvListaProveedor;
+        private System.Windows.Forms.DataGridView DgvListaCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn CClaveCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn CDescripcion;
         private System.Windows.Forms.Label label1;
@@ -196,6 +189,5 @@
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnLimpiar;
-        private System.Windows.Forms.Button BtnCancelar;
     }
 }

@@ -23,7 +23,7 @@ namespace ProyectoProgra5.Formularios
 
         private void BtnBuscarPersona_Click(object sender, EventArgs e)
         {
-            Form FormBuscarPersona = new FrmBuscarPersona();
+            Form FormBuscarPersona = new FrmGestionPersona();
 
             DialogResult respuesta = FormBuscarPersona.ShowDialog();
 

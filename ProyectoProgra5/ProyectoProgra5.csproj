@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\FrmBuscarPersona.cs">
+    <Compile Include="Formularios\FrmBuscarLibro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmBuscarPersona.designer.cs">
-      <DependentUpon>FrmBuscarPersona.cs</DependentUpon>
+    <Compile Include="Formularios\FrmBuscarLibro.Designer.cs">
+      <DependentUpon>FrmBuscarLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarPrestamo.Designer.cs">
+      <DependentUpon>FrmBuscarPrestamo.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmGestionAutor.cs">
       <SubType>Form</SubType>
@@ -122,8 +128,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
-    <EmbeddedResource Include="Formularios\FrmBuscarPersona.resx">
-      <DependentUpon>FrmBuscarPersona.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmBuscarLibro.resx">
+      <DependentUpon>FrmBuscarLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmBuscarPrestamo.resx">
+      <DependentUpon>FrmBuscarPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmGestionAutor.resx">
       <DependentUpon>FrmGestionAutor.cs</DependentUpon>
@@ -167,6 +176,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

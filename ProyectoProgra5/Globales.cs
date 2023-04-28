@@ -19,6 +19,16 @@ namespace ProyectoProgra5
 
         public static Formularios.FrmGestionTipoDePersona MiGestionTipoDePersona = new Formularios.FrmGestionTipoDePersona();
 
+        public static Formularios.FrmGestionAutor MiGestionAutor = new Formularios.FrmGestionAutor();
+
+        public static Formularios.FrmGestionCategoria MiGestionCategoria = new Formularios.FrmGestionCategoria();
+
+        public static Formularios.FrmGestionLibro MiGestionLibro = new Formularios.FrmGestionLibro();
+
+        public static Formularios.FrmPrestamoDetalle MiPrestamoDetalle = new Formularios.FrmPrestamoDetalle();
+
+
+
         public static Logica.Models.Usuario MiUsuarioGlobal = new Logica.Models.Usuario();
 
 

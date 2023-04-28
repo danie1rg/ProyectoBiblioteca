@@ -36,6 +36,16 @@ namespace Logica.Models
             return R;
         }
 
+        public DataTable ListarRol()
+        {
+            DataTable R = new DataTable();
+            Conexion MiCnn = new Conexion();
+
+            R = MiCnn.EjecutarSELECT("SPAutorListarRol");
+
+            return R;
+        }
+
         public DataTable Listar(string pFiltroBusqueda)
         {
             DataTable R = new DataTable();
@@ -43,6 +53,8 @@ namespace Logica.Models
             Conexion conexion = new Conexion();
 
             conexion.ListaDeParametros.Add(new SqlParameter("@filtroBusqueda", pFiltroBusqueda));
+            conexion.ListaDeParametros.Add(new SqlParameter("@verActivos", true));
+
 
             R = conexion.EjecutarSELECT("SPAutorListar");
 
@@ -98,7 +110,7 @@ namespace Logica.Models
             bool R = false;
 
             Conexion MiCnn = new Conexion();
-
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Clave", this.claveAutor));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Nombre", this.nombre));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Nacionalidad", this.nacionalidad));
 

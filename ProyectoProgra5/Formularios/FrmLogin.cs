@@ -77,17 +77,21 @@ namespace ProyectoProgra5.Formularios
         private void BtnIngresoDirecto_Click(object sender, EventArgs e)
         {
             Globales.MiFormPrincipal.Show();
-            this.Show();
+
+            this.Hide();
         }
 
         private void FrmLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Shift && e.Alt && e.KeyCode == Keys.A)
             {
-                //si presionamos shit + alt + a
                 BtnIngresoDirecto.Visible = true;
 
             }
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
 
         }
     }

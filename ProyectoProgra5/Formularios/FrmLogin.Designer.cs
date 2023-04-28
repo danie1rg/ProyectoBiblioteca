@@ -44,17 +44,19 @@
             // TxtEmail
             // 
             this.TxtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtEmail.Location = new System.Drawing.Point(145, 290);
+            this.TxtEmail.Location = new System.Drawing.Point(109, 236);
+            this.TxtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(309, 38);
+            this.TxtEmail.Size = new System.Drawing.Size(233, 32);
             this.TxtEmail.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(221, 45);
+            this.pictureBox1.Location = new System.Drawing.Point(166, 37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 173);
+            this.pictureBox1.Size = new System.Drawing.Size(138, 141);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -63,9 +65,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(262, 243);
+            this.label1.Location = new System.Drawing.Point(196, 197);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 32);
+            this.label1.Size = new System.Drawing.Size(68, 26);
             this.label1.TabIndex = 6;
             this.label1.Text = "Email";
             // 
@@ -73,26 +76,29 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(215, 357);
+            this.label2.Location = new System.Drawing.Point(161, 290);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 32);
+            this.label2.Size = new System.Drawing.Size(124, 26);
             this.label2.TabIndex = 7;
             this.label2.Text = "Contraseña";
             // 
             // Txtpass
             // 
             this.Txtpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txtpass.Location = new System.Drawing.Point(145, 417);
+            this.Txtpass.Location = new System.Drawing.Point(109, 339);
+            this.Txtpass.Margin = new System.Windows.Forms.Padding(2);
             this.Txtpass.Name = "Txtpass";
-            this.Txtpass.Size = new System.Drawing.Size(309, 38);
+            this.Txtpass.Size = new System.Drawing.Size(233, 32);
             this.Txtpass.TabIndex = 8;
             this.Txtpass.UseSystemPasswordChar = true;
             // 
             // BtnVer
             // 
-            this.BtnVer.Location = new System.Drawing.Point(460, 430);
+            this.BtnVer.Location = new System.Drawing.Point(345, 349);
+            this.BtnVer.Margin = new System.Windows.Forms.Padding(2);
             this.BtnVer.Name = "BtnVer";
-            this.BtnVer.Size = new System.Drawing.Size(41, 23);
+            this.BtnVer.Size = new System.Drawing.Size(31, 19);
             this.BtnVer.TabIndex = 9;
             this.BtnVer.Text = "Ver";
             this.BtnVer.UseVisualStyleBackColor = true;
@@ -104,9 +110,10 @@
             this.BtnIngresar.BackColor = System.Drawing.Color.LimeGreen;
             this.BtnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnIngresar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnIngresar.Location = new System.Drawing.Point(145, 518);
+            this.BtnIngresar.Location = new System.Drawing.Point(109, 421);
+            this.BtnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnIngresar.Name = "BtnIngresar";
-            this.BtnIngresar.Size = new System.Drawing.Size(115, 46);
+            this.BtnIngresar.Size = new System.Drawing.Size(86, 37);
             this.BtnIngresar.TabIndex = 10;
             this.BtnIngresar.Text = "Ingresar";
             this.BtnIngresar.UseVisualStyleBackColor = false;
@@ -117,9 +124,10 @@
             this.BtnCancelar.BackColor = System.Drawing.Color.Red;
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnCancelar.Location = new System.Drawing.Point(341, 518);
+            this.BtnCancelar.Location = new System.Drawing.Point(256, 421);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(113, 46);
+            this.BtnCancelar.Size = new System.Drawing.Size(85, 37);
             this.BtnCancelar.TabIndex = 11;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
@@ -127,21 +135,20 @@
             // 
             // BtnIngresoDirecto
             // 
-            this.BtnIngresoDirecto.Location = new System.Drawing.Point(154, 486);
+            this.BtnIngresoDirecto.Location = new System.Drawing.Point(29, 349);
             this.BtnIngresoDirecto.Name = "BtnIngresoDirecto";
-            this.BtnIngresoDirecto.Size = new System.Drawing.Size(96, 26);
+            this.BtnIngresoDirecto.Size = new System.Drawing.Size(75, 23);
             this.BtnIngresoDirecto.TabIndex = 12;
-            this.BtnIngresoDirecto.Text = "Ingreso";
+            this.BtnIngresoDirecto.Text = "Ingreso Directo";
             this.BtnIngresoDirecto.UseVisualStyleBackColor = true;
-            this.BtnIngresoDirecto.Visible = false;
             this.BtnIngresoDirecto.Click += new System.EventHandler(this.BtnIngresoDirecto_Click);
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(590, 635);
+            this.ClientSize = new System.Drawing.Size(442, 516);
             this.Controls.Add(this.BtnIngresoDirecto);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnIngresar);
@@ -152,10 +159,12 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.TxtEmail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmLogin_FormClosed);
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

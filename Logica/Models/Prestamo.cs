@@ -1,6 +1,7 @@
 ﻿using Logica.Services;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -67,5 +68,17 @@ namespace Logica.Models
 
 
         }
+
+        public DataTable Listar()
+        {
+            DataTable R = new DataTable();
+
+            Conexion conexion = new Conexion();
+
+            R = conexion.EjecutarSELECT("SPListarPrestamoS");
+
+            return R;
+        }
+
     }
 }

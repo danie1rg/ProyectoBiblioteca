@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DgvListaProveedor = new System.Windows.Forms.DataGridView();
-            this.CProveedorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CProveedorNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CProveedorTipoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CProveedorCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CProveedorEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.CboxVerActivos = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CbAutores = new System.Windows.Forms.ComboBox();
+            this.CbCategoria = new System.Windows.Forms.ComboBox();
+            this.BtnLimpiar = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnModificar = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
             this.TxtPaginas = new System.Windows.Forms.TextBox();
-            this.TxtUsuarioTelefono = new System.Windows.Forms.TextBox();
-            this.TxtCategoria = new System.Windows.Forms.TextBox();
             this.TxtTitulo = new System.Windows.Forms.TextBox();
             this.TxtLibroId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,75 +46,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
-            this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnLimpiar = new System.Windows.Forms.Button();
-            this.BtnCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvListaProveedor)).BeginInit();
+            this.DgLista = new System.Windows.Forms.DataGridView();
+            this.CClaveLibro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCantidadPaginas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgLista)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DgvListaProveedor
-            // 
-            this.DgvListaProveedor.AllowUserToAddRows = false;
-            this.DgvListaProveedor.AllowUserToDeleteRows = false;
-            this.DgvListaProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvListaProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CProveedorID,
-            this.CProveedorNombre,
-            this.CProveedorTipoDescripcion,
-            this.CProveedorCedula,
-            this.CProveedorEmail});
-            this.DgvListaProveedor.Location = new System.Drawing.Point(36, 65);
-            this.DgvListaProveedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DgvListaProveedor.MultiSelect = false;
-            this.DgvListaProveedor.Name = "DgvListaProveedor";
-            this.DgvListaProveedor.ReadOnly = true;
-            this.DgvListaProveedor.RowHeadersVisible = false;
-            this.DgvListaProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListaProveedor.Size = new System.Drawing.Size(769, 342);
-            this.DgvListaProveedor.TabIndex = 1;
-            this.DgvListaProveedor.VirtualMode = true;
-            // 
-            // CProveedorID
-            // 
-            this.CProveedorID.DataPropertyName = "ProveedorID";
-            this.CProveedorID.HeaderText = "Código";
-            this.CProveedorID.Name = "CProveedorID";
-            this.CProveedorID.ReadOnly = true;
-            // 
-            // CProveedorNombre
-            // 
-            this.CProveedorNombre.DataPropertyName = "ProveedorNombre";
-            this.CProveedorNombre.HeaderText = "Nombre";
-            this.CProveedorNombre.Name = "CProveedorNombre";
-            this.CProveedorNombre.ReadOnly = true;
-            this.CProveedorNombre.Width = 225;
-            // 
-            // CProveedorTipoDescripcion
-            // 
-            this.CProveedorTipoDescripcion.DataPropertyName = "ProveedorTipoDescripcion";
-            this.CProveedorTipoDescripcion.HeaderText = "Tipo";
-            this.CProveedorTipoDescripcion.Name = "CProveedorTipoDescripcion";
-            this.CProveedorTipoDescripcion.ReadOnly = true;
-            // 
-            // CProveedorCedula
-            // 
-            this.CProveedorCedula.DataPropertyName = "ProveedorCedula";
-            this.CProveedorCedula.HeaderText = "Cédula";
-            this.CProveedorCedula.Name = "CProveedorCedula";
-            this.CProveedorCedula.ReadOnly = true;
-            this.CProveedorCedula.Width = 200;
-            // 
-            // CProveedorEmail
-            // 
-            this.CProveedorEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CProveedorEmail.DataPropertyName = "ProveedorEmail";
-            this.CProveedorEmail.FillWeight = 250F;
-            this.CProveedorEmail.HeaderText = "Email";
-            this.CProveedorEmail.Name = "CProveedorEmail";
-            this.CProveedorEmail.ReadOnly = true;
             // 
             // label1
             // 
@@ -137,6 +75,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(358, 26);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // CboxVerActivos
             // 
@@ -149,17 +88,17 @@
             this.CboxVerActivos.TabIndex = 4;
             this.CboxVerActivos.Text = "Ver Usuarios Activos";
             this.CboxVerActivos.UseVisualStyleBackColor = true;
+            this.CboxVerActivos.CheckedChanged += new System.EventHandler(this.CboxVerActivos_CheckedChanged_1);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.BtnCancelar);
+            this.groupBox1.Controls.Add(this.CbAutores);
+            this.groupBox1.Controls.Add(this.CbCategoria);
             this.groupBox1.Controls.Add(this.BtnLimpiar);
             this.groupBox1.Controls.Add(this.BtnEliminar);
             this.groupBox1.Controls.Add(this.BtnModificar);
             this.groupBox1.Controls.Add(this.BtnAgregar);
             this.groupBox1.Controls.Add(this.TxtPaginas);
-            this.groupBox1.Controls.Add(this.TxtUsuarioTelefono);
-            this.groupBox1.Controls.Add(this.TxtCategoria);
             this.groupBox1.Controls.Add(this.TxtTitulo);
             this.groupBox1.Controls.Add(this.TxtLibroId);
             this.groupBox1.Controls.Add(this.label6);
@@ -174,28 +113,79 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle Libro";
             // 
+            // CbAutores
+            // 
+            this.CbAutores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbAutores.FormattingEnabled = true;
+            this.CbAutores.Location = new System.Drawing.Point(202, 183);
+            this.CbAutores.Name = "CbAutores";
+            this.CbAutores.Size = new System.Drawing.Size(200, 28);
+            this.CbAutores.TabIndex = 18;
+            // 
+            // CbCategoria
+            // 
+            this.CbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbCategoria.FormattingEnabled = true;
+            this.CbCategoria.Location = new System.Drawing.Point(202, 143);
+            this.CbCategoria.Name = "CbCategoria";
+            this.CbCategoria.Size = new System.Drawing.Size(200, 28);
+            this.CbCategoria.TabIndex = 17;
+            // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.Location = new System.Drawing.Point(649, 219);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(127, 38);
+            this.BtnLimpiar.TabIndex = 16;
+            this.BtnLimpiar.Text = "LIMPIAR";
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click_1);
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.BackColor = System.Drawing.Color.Firebrick;
+            this.BtnEliminar.ForeColor = System.Drawing.Color.White;
+            this.BtnEliminar.Location = new System.Drawing.Point(649, 155);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(127, 38);
+            this.BtnEliminar.TabIndex = 15;
+            this.BtnEliminar.Text = "ELIMINAR";
+            this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click_1);
+            // 
+            // BtnModificar
+            // 
+            this.BtnModificar.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.BtnModificar.ForeColor = System.Drawing.Color.White;
+            this.BtnModificar.Location = new System.Drawing.Point(649, 93);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(127, 38);
+            this.BtnModificar.TabIndex = 14;
+            this.BtnModificar.Text = "MODIFICAR";
+            this.BtnModificar.UseVisualStyleBackColor = false;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click_1);
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.BackColor = System.Drawing.Color.Green;
+            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
+            this.BtnAgregar.Location = new System.Drawing.Point(649, 36);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(127, 38);
+            this.BtnAgregar.TabIndex = 13;
+            this.BtnAgregar.Text = "AGREGAR";
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click_1);
+            // 
             // TxtPaginas
             // 
             this.TxtPaginas.Location = new System.Drawing.Point(202, 231);
             this.TxtPaginas.Name = "TxtPaginas";
             this.TxtPaginas.Size = new System.Drawing.Size(200, 26);
             this.TxtPaginas.TabIndex = 12;
-            // 
-            // TxtUsuarioTelefono
-            // 
-            this.TxtUsuarioTelefono.Location = new System.Drawing.Point(202, 188);
-            this.TxtUsuarioTelefono.Name = "TxtUsuarioTelefono";
-            this.TxtUsuarioTelefono.ReadOnly = true;
-            this.TxtUsuarioTelefono.Size = new System.Drawing.Size(200, 26);
-            this.TxtUsuarioTelefono.TabIndex = 11;
-            // 
-            // TxtCategoria
-            // 
-            this.TxtCategoria.Location = new System.Drawing.Point(202, 140);
-            this.TxtCategoria.Name = "TxtCategoria";
-            this.TxtCategoria.ReadOnly = true;
-            this.TxtCategoria.Size = new System.Drawing.Size(200, 26);
-            this.TxtCategoria.TabIndex = 10;
+            this.TxtPaginas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPaginas_KeyPress);
             // 
             // TxtTitulo
             // 
@@ -203,6 +193,7 @@
             this.TxtTitulo.Name = "TxtTitulo";
             this.TxtTitulo.Size = new System.Drawing.Size(200, 26);
             this.TxtTitulo.TabIndex = 9;
+            this.TxtTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTitulo_KeyPress);
             // 
             // TxtLibroId
             // 
@@ -221,7 +212,6 @@
             this.label6.Size = new System.Drawing.Size(138, 20);
             this.label6.TabIndex = 4;
             this.label6.Text = "Cantidad Páginas:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -259,104 +249,102 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Código Libro:";
             // 
-            // BtnAgregar
+            // DgLista
             // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.Green;
-            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnAgregar.Location = new System.Drawing.Point(649, 30);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(127, 38);
-            this.BtnAgregar.TabIndex = 13;
-            this.BtnAgregar.Text = "AGREGAR";
-            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.DgLista.AllowUserToAddRows = false;
+            this.DgLista.AllowUserToDeleteRows = false;
+            this.DgLista.AllowUserToOrderColumns = true;
+            this.DgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CClaveLibro,
+            this.CTitulo,
+            this.CNombre,
+            this.CDescripcion,
+            this.CCantidadPaginas});
+            this.DgLista.Location = new System.Drawing.Point(13, 70);
+            this.DgLista.MultiSelect = false;
+            this.DgLista.Name = "DgLista";
+            this.DgLista.ReadOnly = true;
+            this.DgLista.RowHeadersVisible = false;
+            this.DgLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgLista.Size = new System.Drawing.Size(799, 298);
+            this.DgLista.TabIndex = 6;
+            this.DgLista.VirtualMode = true;
+            this.DgLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLista_CellClick);
+            this.DgLista.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgLista_DataBindingComplete);
             // 
-            // BtnModificar
+            // CClaveLibro
             // 
-            this.BtnModificar.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnModificar.ForeColor = System.Drawing.Color.White;
-            this.BtnModificar.Location = new System.Drawing.Point(649, 87);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(127, 38);
-            this.BtnModificar.TabIndex = 14;
-            this.BtnModificar.Text = "MODIFICAR";
-            this.BtnModificar.UseVisualStyleBackColor = false;
+            this.CClaveLibro.DataPropertyName = "ClaveLibro";
+            this.CClaveLibro.HeaderText = "Clave";
+            this.CClaveLibro.Name = "CClaveLibro";
+            this.CClaveLibro.ReadOnly = true;
             // 
-            // BtnEliminar
+            // CTitulo
             // 
-            this.BtnEliminar.BackColor = System.Drawing.Color.Firebrick;
-            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminar.ForeColor = System.Drawing.Color.White;
-            this.BtnEliminar.Location = new System.Drawing.Point(649, 140);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(127, 38);
-            this.BtnEliminar.TabIndex = 15;
-            this.BtnEliminar.Text = "ELIMINAR";
-            this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.CTitulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CTitulo.DataPropertyName = "Titulo";
+            this.CTitulo.HeaderText = "Titulo";
+            this.CTitulo.Name = "CTitulo";
+            this.CTitulo.ReadOnly = true;
             // 
-            // BtnLimpiar
+            // CNombre
             // 
-            this.BtnLimpiar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpiar.Location = new System.Drawing.Point(649, 191);
-            this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(127, 38);
-            this.BtnLimpiar.TabIndex = 16;
-            this.BtnLimpiar.Text = "LIMPIAR";
-            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.CNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CNombre.DataPropertyName = "Nombre";
+            this.CNombre.HeaderText = "Autor";
+            this.CNombre.Name = "CNombre";
+            this.CNombre.ReadOnly = true;
+            this.CNombre.Width = 120;
             // 
-            // BtnCancelar
+            // CDescripcion
             // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.RosyBrown;
-            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelar.Location = new System.Drawing.Point(649, 235);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(127, 38);
-            this.BtnCancelar.TabIndex = 17;
-            this.BtnCancelar.Text = "CANCELAR";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.CDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CDescripcion.DataPropertyName = "Descripcion";
+            this.CDescripcion.HeaderText = "Genéro";
+            this.CDescripcion.Name = "CDescripcion";
+            this.CDescripcion.ReadOnly = true;
+            this.CDescripcion.Width = 150;
+            // 
+            // CCantidadPaginas
+            // 
+            this.CCantidadPaginas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CCantidadPaginas.DataPropertyName = "CantidadPaginas";
+            this.CCantidadPaginas.HeaderText = "Paginas";
+            this.CCantidadPaginas.Name = "CCantidadPaginas";
+            this.CCantidadPaginas.ReadOnly = true;
+            this.CCantidadPaginas.Width = 120;
             // 
             // FrmGestionLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 711);
+            this.Controls.Add(this.DgLista);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CboxVerActivos);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DgvListaProveedor);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmGestionLibro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Libro";
-            ((System.ComponentModel.ISupportInitialize)(this.DgvListaProveedor)).EndInit();
+            this.Load += new System.EventHandler(this.FrmGestionLibro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DgvListaProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CProveedorID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CProveedorNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CProveedorTipoDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CProveedorCedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CProveedorEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.CheckBox CboxVerActivos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox TxtPaginas;
-        private System.Windows.Forms.TextBox TxtUsuarioTelefono;
-        private System.Windows.Forms.TextBox TxtCategoria;
         private System.Windows.Forms.TextBox TxtTitulo;
         private System.Windows.Forms.TextBox TxtLibroId;
         private System.Windows.Forms.Label label6;
@@ -364,10 +352,17 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnLimpiar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.ComboBox CbAutores;
+        private System.Windows.Forms.ComboBox CbCategoria;
+        private System.Windows.Forms.DataGridView DgLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CClaveLibro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTitulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CCantidadPaginas;
     }
 }

@@ -2,23 +2,24 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+
+
 
 namespace Logica.Models
 {
+
     public class PrestamoDetalle
     {
-        public int cantidad;
-        public string clavePrestamo;
-        public string claveLibro;
-        public string Notas;
-        public Libro Milibro;
-        public Prestamo MiPrestamo;
+        public int ID { get; set; }
+        public bool Activo { get; set; }
+        public Libro Milibro { get; set; }
+        public Prestamo MiPrestamo { get; set; }
 
-        private PrestamoDetalle() 
+        public PrestamoDetalle()
         {
             Milibro = new Libro();
             MiPrestamo = new Prestamo();
@@ -28,7 +29,7 @@ namespace Logica.Models
 
         public bool Agregar()
         {
-            bool respuesta = false;
+            bool R = false;
 
             Conexion MiCnn = new Conexion();
 
@@ -36,31 +37,33 @@ namespace Logica.Models
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@ClavePrestamo", this.MiPrestamo.ClavePrestamo));
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@Notas", this.Notas));
+            Object resultado = MiCnn.EjecutarSELECTEscalar("SPPrestamoDetallesAgregar");
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@Cantidad", this.cantidad));
+            int IDCreada;
 
-            int resultado = MiCnn.EjecutarSELECTEscalar("SPPrestamoDetallesAgregar");
+            IDCreada = Convert.ToInt32(resultado.ToString());
 
-            if (resultado > 0)
+            if (IDCreada > 0)
             {
-                respuesta = true;
+                R = true;
             }
 
-            return respuesta;
+            return R;
 
         }
 
-        public bool ConsultarPorClaveLibroPrestamo()
+
+
+        public bool ConsultarPorClavePrestamoDetalle()
         {
             bool R = false;
+
             Conexion MiCnn = new Conexion();
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClavePrestamo", this.MiPrestamo.ClavePrestamo));
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveLibro", this.Milibro.ClaveLibro));
-
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@ID", this.ID));
 
             DataTable consulta = new DataTable();
+
             consulta = MiCnn.EjecutarSELECT("SPPrestamoDetalleConsultarClave");
 
             if (consulta != null && consulta.Rows.Count > 0)
@@ -70,7 +73,7 @@ namespace Logica.Models
             return R;
         }
 
-        public DataTable ListarActivos(string pFiltroBusqueda)
+        public DataTable ListarActivos()
         {
             DataTable R = new DataTable();
 
@@ -78,60 +81,28 @@ namespace Logica.Models
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@verActivos", true));
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@FiltroBusqueda", pFiltroBusqueda));
 
-            R = MiCnn.EjecutarSELECT("SPLibroListar");
+            R = MiCnn.EjecutarSELECT("SPPrestamoDetalleListar");
 
             return R;
 
         }
-        public DataTable ListarInactivos(string pFiltroBusqueda)
+        public DataTable ListarInactivos()
         {
             DataTable R = new DataTable();
 
             Conexion MiCnn = new Conexion();
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@verActivos", false));
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@FiltroBusqueda", pFiltroBusqueda));
 
-            R = MiCnn.EjecutarSELECT("SPLibroListar");
-
-            return R;
-        }
-
-
-
-        public PrestamoDetalle ConsultarPorIDRetornaPrestamoDetalle()
-        {
-            PrestamoDetalle R = new PrestamoDetalle();
-
-            Conexion MiCnn = new Conexion();
-
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveLibro", this.Milibro.ClaveLibro));
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClavePrestamo", this.MiPrestamo.ClavePrestamo));
-
-
-       
-            DataTable dt = new DataTable();
-
-            dt = MiCnn.EjecutarSELECT("SPLibroConsultarPorClave");
-
-            if (dt != null && dt.Rows.Count > 0)
-            {
-
-                DataRow dr = dt.Rows[0];
-
-                R.Milibro.ClaveLibro = Convert.ToString(dr["ClaveLibro"]);
-                R.MiPrestamo.ClavePrestamo = Convert.ToInt32(dr["ClavePrestamo"]);
-                R.Notas = Convert.ToString(dr["Notas"]);
-                R.cantidad = Convert.ToInt32(dr["Cantidad"]);
-            }
-
+            R = MiCnn.EjecutarSELECT("SPPrestamoDetalleListar");
 
             return R;
         }
 
-     
+
+
+
 
         public bool DesactivarPrestamoDetalle()
         {
@@ -139,9 +110,7 @@ namespace Logica.Models
 
             Conexion MiCnn = new Conexion();
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveLibro", this.Milibro.ClaveLibro));
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClavePrestamo", this.MiPrestamo.ClavePrestamo));
-
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@ID", this.ID));
 
             int resultado = MiCnn.EjecutarInsertUpdateDelete("SPPrestamoDetalleDesactivar");
 
@@ -160,8 +129,8 @@ namespace Logica.Models
             Conexion MiCnn = new Conexion();
 
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveLibro", this.Milibro.ClaveLibro));
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClavePrestamo", this.MiPrestamo.ClavePrestamo));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@ID", this.ID));
+
 
 
             int resultado = MiCnn.EjecutarInsertUpdateDelete("SPPrestamoDetalleActivar");
@@ -173,11 +142,13 @@ namespace Logica.Models
             return R;
         }
 
-
-
-
-
-
     }
-
 }
+
+
+
+
+
+
+  
+

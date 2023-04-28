@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica.Models;
+using System;
 using System.Windows.Forms;
 
 namespace ProyectoProgra5.Formularios
@@ -79,6 +80,47 @@ namespace ProyectoProgra5.Formularios
                 Globales.MiGestionTipoDePersona = new FrmGestionTipoDePersona();
 
                 Globales.MiGestionTipoDePersona.Show();
+            }
+        }
+
+        private void gestiónDeAutoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiGestionAutor.Visible)
+            {
+                Globales.MiGestionAutor = new FrmGestionAutor();
+                Globales.MiGestionAutor.Show();
+            }
+        }
+
+        private void gestiónDeLibrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiGestionLibro.Visible)
+            {
+                Globales.MiGestionLibro = new FrmGestionLibro();
+
+                Globales.MiGestionLibro.Show();
+            }
+        }
+
+        
+
+        private void gestionPrestamoDetalletoolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiPrestamoDetalle.Visible)
+            {
+                Globales.MiPrestamoDetalle = new FrmPrestamoDetalle();
+
+                Globales.MiPrestamoDetalle.Show();
+            }
+        }
+
+        private void gestionCategoriatoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiGestionCategoria.Visible)
+            {
+                Globales.MiGestionCategoria = new FrmGestionCategoria();
+
+                Globales.MiGestionCategoria.Show();
             }
         }
     }

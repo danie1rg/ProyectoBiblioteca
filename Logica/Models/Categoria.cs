@@ -33,6 +33,16 @@ namespace Logica.Models
             return R;
         }
 
+        public DataTable ListarRol()
+        {
+            DataTable R = new DataTable();
+            Conexion MiCnn = new Conexion();
+
+            R = MiCnn.EjecutarSELECT("SPCategoriaListarRol");
+
+            return R;
+        }
+
         public DataTable Listar()
         {
             DataTable R = new DataTable();
@@ -93,6 +103,7 @@ namespace Logica.Models
             bool R = false;
 
             Conexion MiCnn = new Conexion();
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Clave", this.ClaveCategoria));
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Descripcion", this.Descripcion));
 

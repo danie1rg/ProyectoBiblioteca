@@ -25,11 +25,9 @@ namespace Logica.Models
         }
         public bool Agregar()
         {
-            bool respuesta = false;
+            bool R = false;
 
             Conexion MiCnn = new Conexion();
-
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveLibro", this.ClaveLibro));
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Titulo", this.Titulo));
 
@@ -43,10 +41,10 @@ namespace Logica.Models
 
             if (resultado > 0)
             {
-                respuesta = true;
+                R = true;
             }
 
-            return respuesta;
+            return R;
 
         }
 
@@ -75,7 +73,7 @@ namespace Logica.Models
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Titulo", this.Titulo));
 
             DataTable consulta = new DataTable();
-            consulta = MiCnn.EjecutarSELECT("SPLibroConsultarPorClave");
+            consulta = MiCnn.EjecutarSELECT("SPLibroConsultarPorTitulo");
 
             if (consulta != null && consulta.Rows.Count > 0)
             {
@@ -92,7 +90,7 @@ namespace Logica.Models
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@verActivos", true));
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@FiltroBusqueda", pFiltroBusqueda));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@filtroBusqueda", pFiltroBusqueda));
 
             R = MiCnn.EjecutarSELECT("SPLibroListar");
 
@@ -106,7 +104,7 @@ namespace Logica.Models
             Conexion MiCnn = new Conexion();
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@verActivos", false));
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@FiltroBusqueda", pFiltroBusqueda));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@filtroBusqueda", pFiltroBusqueda));
 
             R = MiCnn.EjecutarSELECT("SPLibroListar");
 
@@ -115,7 +113,7 @@ namespace Logica.Models
 
       
 
-        public Libro ConsultarPorIDRetornaUsuario()
+        public Libro ConsultarPorIDRetornaLibro()
         {
             Libro R = new Libro();
 
@@ -135,11 +133,9 @@ namespace Logica.Models
 
                 R.ClaveLibro = Convert.ToInt32(dr["ClaveLibro"]);
                 R.Titulo = Convert.ToString(dr["Titulo"]);
-
-
                 R.CantidadPaginas = Convert.ToInt32(dr["CantidadPaginas"]);
 
-                //composiciones
+               
                 R.MiAutor.claveAutor = Convert.ToInt32(dr["ClaveAutor"]);
                 R.MiAutor.nombre = Convert.ToString(dr["Nombre"]);
 
@@ -158,16 +154,17 @@ namespace Logica.Models
 
             Conexion MiCnn = new Conexion();
 
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Clave", this.ClaveLibro));
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Titulo", this.Titulo));
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@CantidadPaginas", this.CantidadPaginas));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Paginas", this.CantidadPaginas));
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveCategoria", this.MiCategoria.ClaveCategoria));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Categoria", this.MiCategoria.ClaveCategoria));
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ClaveAutor", this.MiAutor.claveAutor));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Autor", this.MiAutor.claveAutor));
 
-            int resultado = MiCnn.EjecutarInsertUpdateDelete("SPLibroEditar");
+            int resultado = MiCnn.EjecutarInsertUpdateDelete("SPLibroModificar");
 
             if (resultado > 0)
             {
@@ -177,7 +174,7 @@ namespace Logica.Models
             return R;
         }
 
-        public bool DesactivarUsuario()
+        public bool Eliminar()
         {
             bool R = false;
 
@@ -195,7 +192,7 @@ namespace Logica.Models
         }
 
 
-        public bool ActivarUsuario()
+        public bool Activar()
         {
             bool R = false;
 
