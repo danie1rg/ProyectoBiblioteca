@@ -54,6 +54,7 @@
             this.DgvListaCategoria.Name = "DgvListaCategoria";
             this.DgvListaCategoria.ReadOnly = true;
             this.DgvListaCategoria.RowHeadersVisible = false;
+            this.DgvListaCategoria.RowHeadersWidth = 51;
             this.DgvListaCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvListaCategoria.Size = new System.Drawing.Size(437, 252);
             this.DgvListaCategoria.TabIndex = 1;
@@ -64,8 +65,10 @@
             // 
             this.CClaveCategoria.DataPropertyName = "ClaveCategoria";
             this.CClaveCategoria.HeaderText = "Clave";
+            this.CClaveCategoria.MinimumWidth = 6;
             this.CClaveCategoria.Name = "CClaveCategoria";
             this.CClaveCategoria.ReadOnly = true;
+            this.CClaveCategoria.Width = 125;
             // 
             // CDescripcion
             // 
@@ -73,38 +76,39 @@
             this.CDescripcion.DataPropertyName = "Descripcion";
             this.CDescripcion.FillWeight = 250F;
             this.CDescripcion.HeaderText = "Género";
+            this.CDescripcion.MinimumWidth = 6;
             this.CDescripcion.Name = "CDescripcion";
             this.CDescripcion.ReadOnly = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 283);
+            this.label1.Location = new System.Drawing.Point(13, 288);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 20);
+            this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Clave";
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(82, 283);
+            this.txtClave.Location = new System.Drawing.Point(72, 285);
             this.txtClave.Name = "txtClave";
             this.txtClave.ReadOnly = true;
-            this.txtClave.Size = new System.Drawing.Size(118, 26);
+            this.txtClave.Size = new System.Drawing.Size(118, 30);
             this.txtClave.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(238, 283);
+            this.label2.Location = new System.Drawing.Point(219, 288);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.Size = new System.Drawing.Size(77, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Género";
             // 
             // TxtGenero
             // 
-            this.TxtGenero.Location = new System.Drawing.Point(302, 283);
+            this.TxtGenero.Location = new System.Drawing.Point(302, 289);
             this.TxtGenero.Multiline = true;
             this.TxtGenero.Name = "TxtGenero";
             this.TxtGenero.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -153,7 +157,7 @@
             // 
             // FrmGestionCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 383);
             this.Controls.Add(this.BtnEditar);

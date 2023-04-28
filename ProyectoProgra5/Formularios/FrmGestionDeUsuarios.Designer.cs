@@ -124,6 +124,7 @@
             this.TxtContrasenna.Size = new System.Drawing.Size(340, 34);
             this.TxtContrasenna.TabIndex = 10;
             this.TxtContrasenna.UseSystemPasswordChar = true;
+            this.TxtContrasenna.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtContrasenna_KeyPress);
             // 
             // CbUsuarioRol
             // 
@@ -139,6 +140,8 @@
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(252, 34);
             this.TxtEmail.TabIndex = 9;
+            this.TxtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEmail_KeyPress);
+            this.TxtEmail.Leave += new System.EventHandler(this.TxtEmail_Leave);
             // 
             // label5
             // 
@@ -155,11 +158,13 @@
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(383, 34);
             this.TxtNombre.TabIndex = 8;
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // TxtCodUsuario
             // 
             this.TxtCodUsuario.Location = new System.Drawing.Point(230, 58);
             this.TxtCodUsuario.Name = "TxtCodUsuario";
+            this.TxtCodUsuario.ReadOnly = true;
             this.TxtCodUsuario.Size = new System.Drawing.Size(291, 34);
             this.TxtCodUsuario.TabIndex = 7;
             // 

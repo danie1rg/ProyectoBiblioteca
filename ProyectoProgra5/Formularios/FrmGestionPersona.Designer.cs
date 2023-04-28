@@ -98,12 +98,14 @@
             // 
             // BtnLimpiar
             // 
+            this.BtnLimpiar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.BtnLimpiar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.BtnLimpiar.Location = new System.Drawing.Point(886, 29);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(114, 35);
             this.BtnLimpiar.TabIndex = 18;
             this.BtnLimpiar.Text = "Limpiar";
-            this.BtnLimpiar.UseVisualStyleBackColor = true;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // TxtDireccion
@@ -114,6 +116,7 @@
             this.TxtDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TxtDireccion.Size = new System.Drawing.Size(252, 140);
             this.TxtDireccion.TabIndex = 17;
+            this.TxtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDireccion_KeyPress);
             // 
             // CbTipoPersona
             // 
@@ -129,6 +132,7 @@
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(249, 30);
             this.TxtTelefono.TabIndex = 15;
+            this.TxtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefono_KeyPress);
             // 
             // TxtEmail
             // 
@@ -136,6 +140,8 @@
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(272, 30);
             this.TxtEmail.TabIndex = 14;
+            this.TxtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEmail_KeyPress);
+            this.TxtEmail.Leave += new System.EventHandler(this.TxtEmail_Leave);
             // 
             // TxtApellido
             // 
@@ -143,6 +149,7 @@
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(165, 30);
             this.TxtApellido.TabIndex = 13;
+            this.TxtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtApellido_KeyPress);
             // 
             // TxtNombre
             // 
@@ -150,6 +157,7 @@
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(165, 30);
             this.TxtNombre.TabIndex = 12;
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // TxtCedula
             // 
@@ -157,6 +165,7 @@
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(165, 30);
             this.TxtCedula.TabIndex = 11;
+            this.TxtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCedula_KeyPress);
             // 
             // DtFechaNac
             // 
@@ -242,6 +251,7 @@
             // 
             this.TxtPersonaID.Location = new System.Drawing.Point(168, 61);
             this.TxtPersonaID.Name = "TxtPersonaID";
+            this.TxtPersonaID.ReadOnly = true;
             this.TxtPersonaID.Size = new System.Drawing.Size(108, 30);
             this.TxtPersonaID.TabIndex = 1;
             // 
@@ -376,42 +386,49 @@
             // 
             // BtnAgregar
             // 
+            this.BtnAgregar.BackColor = System.Drawing.Color.Lime;
+            this.BtnAgregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.BtnAgregar.Location = new System.Drawing.Point(21, 625);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(108, 42);
             this.BtnAgregar.TabIndex = 4;
             this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click_1);
             // 
             // BtnModificar
             // 
+            this.BtnModificar.BackColor = System.Drawing.Color.Gold;
             this.BtnModificar.Location = new System.Drawing.Point(156, 625);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(108, 42);
             this.BtnModificar.TabIndex = 5;
             this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.UseVisualStyleBackColor = false;
             this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // BtnEliminar
             // 
+            this.BtnEliminar.BackColor = System.Drawing.Color.OrangeRed;
+            this.BtnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnEliminar.Location = new System.Drawing.Point(297, 625);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(108, 42);
             this.BtnEliminar.TabIndex = 6;
             this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnCancelar
             // 
+            this.BtnCancelar.BackColor = System.Drawing.Color.Red;
+            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.BtnCancelar.Location = new System.Drawing.Point(431, 625);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(108, 42);
             this.BtnCancelar.TabIndex = 7;
             this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // TxtBuscar

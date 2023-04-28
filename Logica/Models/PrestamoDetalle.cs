@@ -14,10 +14,11 @@ namespace Logica.Models
 
     public class PrestamoDetalle
     {
-        public int ID { get; set; }
+
         public bool Activo { get; set; }
         public Libro Milibro { get; set; }
         public Prestamo MiPrestamo { get; set; }
+
 
         public PrestamoDetalle()
         {
@@ -26,7 +27,7 @@ namespace Logica.Models
         }
 
 
-
+        /**
         public bool Agregar()
         {
             bool R = false;
@@ -50,10 +51,55 @@ namespace Logica.Models
 
             return R;
 
+        }*/
+
+
+        public DataTable ListarActivos(string pFiltroBusqueda)
+        {
+            DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@verActivos", true));
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@FiltroBusqueda", pFiltroBusqueda));
+
+            R = MiCnn.EjecutarSELECT("SPPrestamoActivosListar");
+
+            return R;
+
+        }
+
+        public DataTable ListarInactivos(string pFiltroBusqueda)
+        {
+            DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@verActivos", false));
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@FiltroBusqueda", pFiltroBusqueda));
+
+            R = MiCnn.EjecutarSELECT("SPPrestamoActivosListar");
+
+            return R;
+
+        }
+
+        public DataTable ListarHoy()
+        {
+            DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            R = MiCnn.EjecutarSELECT("SPPrestamosHoyListar");
+
+            return R;
+
         }
 
 
-
+        /*
         public bool ConsultarPorClavePrestamoDetalle()
         {
             bool R = false;
@@ -71,8 +117,10 @@ namespace Logica.Models
                 R = true;
             }
             return R;
-        }
+        } */
 
+
+        /*
         public DataTable ListarActivos()
         {
             DataTable R = new DataTable();
@@ -100,7 +148,7 @@ namespace Logica.Models
             return R;
         }
 
-
+        */
 
 
 
@@ -110,7 +158,9 @@ namespace Logica.Models
 
             Conexion MiCnn = new Conexion();
 
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@ID", this.ID));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@PrestamoID", this.MiPrestamo.ClavePrestamo));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@LibroID", this.Milibro.ClaveLibro));
+
 
             int resultado = MiCnn.EjecutarInsertUpdateDelete("SPPrestamoDetalleDesactivar");
 
@@ -121,7 +171,7 @@ namespace Logica.Models
             return R;
         }
 
-
+        /*
         public bool ActivarPrestamoDetalle()
         {
             bool R = false;
@@ -140,7 +190,7 @@ namespace Logica.Models
                 R = true;
             }
             return R;
-        }
+        }*/
 
     }
 }

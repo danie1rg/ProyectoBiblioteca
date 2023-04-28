@@ -103,7 +103,7 @@ namespace ProyectoProgra5.Formularios
         }
 
         
-
+        /*
         private void gestionPrestamoDetalletoolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (!Globales.MiPrestamoDetalle.Visible)
@@ -112,7 +112,7 @@ namespace ProyectoProgra5.Formularios
 
                 Globales.MiPrestamoDetalle.Show();
             }
-        }
+        } */
 
         private void gestionCategoriatoolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -121,6 +121,47 @@ namespace ProyectoProgra5.Formularios
                 Globales.MiGestionCategoria = new FrmGestionCategoria();
 
                 Globales.MiGestionCategoria.Show();
+            }
+        }
+
+        private void rEGISTROSDEPRESTAMOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiFormRegistroPrestamo.Visible)
+            {
+                Globales.MiFormRegistroPrestamo = new FrmRegistroPrestamo();
+
+                Globales.MiFormRegistroPrestamo.Show();
+            }
+        }
+
+        private void listaDePrestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiPrestamoDetalleActivos.Visible)
+            {
+                Globales.MiPrestamoDetalleActivos = new FrmPrestamosActivos();
+
+                Globales.MiPrestamoDetalleActivos.Show();
+            }
+        }
+
+        private void MnuAcercaDe_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiInformacion.Visible)
+            {
+                Globales.MiInformacion = new FrmInformacion();
+
+                Globales.MiInformacion.Show();
+            }
+
+        }
+
+        private void listaDePrestamosHoyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiPrestamoHoy.Visible)
+            {
+                Globales.MiPrestamoHoy = new FrmListarPrestamosPorHoy();
+
+                Globales.MiPrestamoHoy.Show();
             }
         }
     }

@@ -161,7 +161,7 @@ namespace ProyectoProgra5.Formularios
         {
             if (ValidarDatosDigitados())
             {
-                MiPrestamoD.Agregar();
+                //MiPrestamoD.Agregar();
                 MessageBox.Show("Compra creada correctamente", ":D", MessageBoxButtons.OK);
                 LimpiarFormulario();
 

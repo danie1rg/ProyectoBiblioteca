@@ -105,7 +105,7 @@ namespace ProyectoProgra5.Formularios
         private void ActivarAgregar()
         {
             BtnAgregar.Enabled = true;
-            BtnEliminar.Enabled = false;
+            BtnModificar.Enabled = false;
             BtnEliminar.Enabled = false;
         }
 
@@ -114,7 +114,7 @@ namespace ProyectoProgra5.Formularios
         {
             BtnAgregar.Enabled = false;
             BtnEliminar.Enabled = true;
-            BtnEliminar.Enabled = true;
+            BtnModificar.Enabled = true;
         }
 
         private void LimpiarFormulario()
@@ -221,7 +221,7 @@ namespace ProyectoProgra5.Formularios
 
                         if (ok)
                         {
-                            MessageBox.Show("Usuario guardado correctamente", ":D", MessageBoxButtons.OK);
+                            MessageBox.Show("Libro guardado correctamente", ":D", MessageBoxButtons.OK);
 
                             LimpiarFormulario();
 
@@ -230,7 +230,7 @@ namespace ProyectoProgra5.Formularios
                         }
                         else
                         {
-                            MessageBox.Show("El Usuario no guardó correctamente", ":(", MessageBoxButtons.OK);
+                            MessageBox.Show("El libro no guardó correctamente", ":(", MessageBoxButtons.OK);
                         }
 
                     }
@@ -242,7 +242,7 @@ namespace ProyectoProgra5.Formularios
 
                     if (Titulo)
                     {
-                        MessageBox.Show("Ya existe un usuario con el titulo digitado", "Error de validación", MessageBoxButtons.OK);
+                        MessageBox.Show("Ya existe un libro con el titulo digitado", "Error de validación", MessageBoxButtons.OK);
                         return;
                     }
                 }
@@ -263,14 +263,14 @@ namespace ProyectoProgra5.Formularios
 
                 if (MiLibroLocal.ConsultarPorClaveLibro())
                 {
-                    DialogResult respuesta = MessageBox.Show("¿Está seguro que desea modificar el usuario?", "???",
+                    DialogResult respuesta = MessageBox.Show("¿Está seguro que desea modificar el libro?", "???",
                                                                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (respuesta == DialogResult.Yes)
                     {
                         if (MiLibroLocal.Editar())
                         {
-                            MessageBox.Show("El usuario ha sido modificado correctamente", ":D", MessageBoxButtons.OK);
+                            MessageBox.Show("El libro ha sido modificado correctamente", ":D", MessageBoxButtons.OK);
 
                             LimpiarFormulario();
                             CargarListaDeLibros();

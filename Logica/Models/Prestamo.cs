@@ -24,12 +24,33 @@ namespace Logica.Models
         public Persona MiPersona { get; set; }
 
 
+        public List<PrestamoDetalle> ListaPrestamoDetalles { get; set; }
+
+
 
 
         public Prestamo()
         {
             MiUsuario = new Usuario();
             MiPersona = new Persona();
+            ListaPrestamoDetalles = new List<PrestamoDetalle>();
+        }
+
+
+        public DataTable CargarEsquemaDetalle()
+        {
+            DataTable dt = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            dt = MiCnn.EjecutarSELECT("SPPrestamoDetalleEsquema", true);
+
+            //como estamos cargando el esquema, tambien viene la indicación del pk
+            //se debe anular esa opcion
+
+            dt.PrimaryKey = null;
+
+            return dt;
         }
 
         public bool Agregar()
@@ -52,6 +73,21 @@ namespace Logica.Models
                 try
                 {
                     IDCreada = Convert.ToInt32(retorno.ToString());
+                    this.ClavePrestamo = IDCreada;
+
+
+                    foreach (PrestamoDetalle item in ListaPrestamoDetalles) 
+                    {
+                        Conexion MiCnnDetalle = new Conexion();
+
+                        MiCnnDetalle.ListaDeParametros.Add(new SqlParameter("@ClavePrestamo", this.ClavePrestamo));
+                        MiCnnDetalle.ListaDeParametros.Add(new SqlParameter("@ClaveLibro", item.Milibro.ClaveLibro));
+                        MiCnnDetalle.EjecutarInsertUpdateDelete("SPPrestamoDetallesAgregar");
+
+
+
+                    }
+                    R = true;
 
                 }
                 catch (Exception)

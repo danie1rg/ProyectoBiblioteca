@@ -33,9 +33,11 @@ namespace ProyectoProgra5.Formularios
         {
             DtLista = new DataTable();
 
-            DtLista = MiLibro.ListarActivos("");
+            DtLista = MiLibro.ListarActivos(TxtBuscar.Text.Trim());
 
             DgvLista.DataSource = DtLista;
+
+            DgvLista.ClearSelection();
 
         }
 
@@ -52,10 +54,17 @@ namespace ProyectoProgra5.Formularios
 
                 int paginas = Convert.ToInt32(row.Cells["CCantidadPaginas"].Value);
 
+
+                DataRow MiFila = Globales.MiFormRegistroPrestamo.ListaLibros.NewRow();
+
+                MiFila["ClaveLibro"] = clave;
+                MiFila["Titulo"] = titulo;
+
                 //pasar las variables al objeto de compra del formulario de registro de compra
-                Globales.MiPrestamoDetalle.MiPrestamoD.Milibro.ClaveLibro = clave;
-                Globales.MiPrestamoDetalle.MiPrestamoD.Milibro.Titulo = titulo;
-                Globales.MiPrestamoDetalle.MiPrestamoD.Milibro.CantidadPaginas = paginas;
+                //Globales.MiPrestamoDetalle.MiPrestamoD.Milibro.ClaveLibro = clave;
+                //Globales.MiPrestamoDetalle.MiPrestamoD.Milibro.Titulo = titulo;
+                //Globales.MiPrestamoDetalle.MiPrestamoD.Milibro.CantidadPaginas = paginas;
+                Globales.MiFormRegistroPrestamo.ListaLibros.Rows.Add(MiFila);
 
                 DialogResult = DialogResult.OK;
 
@@ -67,6 +76,14 @@ namespace ProyectoProgra5.Formularios
         {
             DialogResult = DialogResult.Cancel;
 
+        }
+
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtBuscar.Text.Count() > 2 || string.IsNullOrEmpty(TxtBuscar.Text.Trim()))
+            {
+                LlenarLista();
+            }
         }
     }
 }

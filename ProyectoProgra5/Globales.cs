@@ -25,11 +25,17 @@ namespace ProyectoProgra5
 
         public static Formularios.FrmGestionLibro MiGestionLibro = new Formularios.FrmGestionLibro();
 
-        public static Formularios.FrmPrestamoDetalle MiPrestamoDetalle = new Formularios.FrmPrestamoDetalle();
+        //public static Formularios.FrmPrestamoDetalle MiPrestamoDetalle = new Formularios.FrmPrestamoDetalle();
 
-
+        public static Formularios.FrmRegistroPrestamo MiFormRegistroPrestamo = new Formularios.FrmRegistroPrestamo();
 
         public static Logica.Models.Usuario MiUsuarioGlobal = new Logica.Models.Usuario();
+
+        public static Formularios.FrmPrestamosActivos MiPrestamoDetalleActivos = new Formularios.FrmPrestamosActivos();
+
+        public static Formularios.FrmInformacion MiInformacion = new Formularios.FrmInformacion();  
+
+        public static Formularios.FrmListarPrestamosPorHoy MiPrestamoHoy = new Formularios.FrmListarPrestamosPorHoy();
 
 
     }

@@ -52,11 +52,11 @@
     <Compile Include="Formularios\FrmBuscarLibro.Designer.cs">
       <DependentUpon>FrmBuscarLibro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmBuscarPrestamo.cs">
+    <Compile Include="Formularios\FrmBuscarPersona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmBuscarPrestamo.Designer.cs">
-      <DependentUpon>FrmBuscarPrestamo.cs</DependentUpon>
+    <Compile Include="Formularios\FrmBuscarPersona.Designer.cs">
+      <DependentUpon>FrmBuscarPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmGestionAutor.cs">
       <SubType>Form</SubType>
@@ -100,6 +100,18 @@
     <Compile Include="Formularios\FrmGestionLibro.Designer.cs">
       <DependentUpon>FrmGestionLibro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmInformacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmInformacion.Designer.cs">
+      <DependentUpon>FrmInformacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmListarPrestamosPorHoy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListarPrestamosPorHoy.Designer.cs">
+      <DependentUpon>FrmListarPrestamosPorHoy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,11 +124,11 @@
     <Compile Include="Formularios\FrmMDI.Designer.cs">
       <DependentUpon>FrmMDI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmPrestamoDetalle.cs">
+    <Compile Include="Formularios\FrmPrestamosActivos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmPrestamoDetalle.Designer.cs">
-      <DependentUpon>FrmPrestamoDetalle.cs</DependentUpon>
+    <Compile Include="Formularios\FrmPrestamosActivos.Designer.cs">
+      <DependentUpon>FrmPrestamosActivos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmRegistroPrestamo.cs">
       <SubType>Form</SubType>
@@ -131,8 +143,8 @@
     <EmbeddedResource Include="Formularios\FrmBuscarLibro.resx">
       <DependentUpon>FrmBuscarLibro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmBuscarPrestamo.resx">
-      <DependentUpon>FrmBuscarPrestamo.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmBuscarPersona.resx">
+      <DependentUpon>FrmBuscarPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmGestionAutor.resx">
       <DependentUpon>FrmGestionAutor.cs</DependentUpon>
@@ -155,14 +167,20 @@
     <EmbeddedResource Include="Formularios\FrmGestionLibro.resx">
       <DependentUpon>FrmGestionLibro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmInformacion.resx">
+      <DependentUpon>FrmInformacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmListarPrestamosPorHoy.resx">
+      <DependentUpon>FrmListarPrestamosPorHoy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMDI.resx">
       <DependentUpon>FrmMDI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmPrestamoDetalle.resx">
-      <DependentUpon>FrmPrestamoDetalle.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmPrestamosActivos.resx">
+      <DependentUpon>FrmPrestamosActivos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmRegistroPrestamo.resx">
       <DependentUpon>FrmRegistroPrestamo.cs</DependentUpon>

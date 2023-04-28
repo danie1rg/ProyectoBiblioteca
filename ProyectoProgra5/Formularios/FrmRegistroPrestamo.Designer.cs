@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegistroPrestamo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnBuscarPersona = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,7 +36,19 @@
             this.TxtPersona = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnCrearPrestamo = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DtgListaLibros = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.CClaveLibro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgListaLibros)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -101,19 +114,116 @@
             // 
             // BtnCrearPrestamo
             // 
+            this.BtnCrearPrestamo.BackColor = System.Drawing.Color.Lime;
+            this.BtnCrearPrestamo.ForeColor = System.Drawing.SystemColors.Info;
             this.BtnCrearPrestamo.Location = new System.Drawing.Point(125, 595);
             this.BtnCrearPrestamo.Name = "BtnCrearPrestamo";
             this.BtnCrearPrestamo.Size = new System.Drawing.Size(530, 37);
             this.BtnCrearPrestamo.TabIndex = 1;
             this.BtnCrearPrestamo.Text = "Crear Prestamo";
-            this.BtnCrearPrestamo.UseVisualStyleBackColor = true;
+            this.BtnCrearPrestamo.UseVisualStyleBackColor = false;
             this.BtnCrearPrestamo.Click += new System.EventHandler(this.BtnCrearPrestamo_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.toolStrip1);
+            this.groupBox2.Controls.Add(this.DtgListaLibros);
+            this.groupBox2.Location = new System.Drawing.Point(14, 239);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(727, 305);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Prestamo Detalle";
+            // 
+            // DtgListaLibros
+            // 
+            this.DtgListaLibros.AllowUserToAddRows = false;
+            this.DtgListaLibros.AllowUserToDeleteRows = false;
+            this.DtgListaLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgListaLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CClaveLibro,
+            this.CTitulo});
+            this.DtgListaLibros.Location = new System.Drawing.Point(15, 72);
+            this.DtgListaLibros.MultiSelect = false;
+            this.DtgListaLibros.Name = "DtgListaLibros";
+            this.DtgListaLibros.ReadOnly = true;
+            this.DtgListaLibros.RowHeadersVisible = false;
+            this.DtgListaLibros.RowHeadersWidth = 51;
+            this.DtgListaLibros.RowTemplate.Height = 24;
+            this.DtgListaLibros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DtgListaLibros.Size = new System.Drawing.Size(689, 211);
+            this.DtgListaLibros.TabIndex = 0;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripLabel1,
+            this.toolStripButton2,
+            this.toolStripLabel2});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 30);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(721, 27);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(101, 24);
+            this.toolStripLabel1.Text = "Agregar Libro";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(101, 24);
+            this.toolStripLabel2.Text = "Eliminar Libro";
+            this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
+            // 
+            // CClaveLibro
+            // 
+            this.CClaveLibro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CClaveLibro.DataPropertyName = "claveLibro";
+            this.CClaveLibro.HeaderText = "Cód. Libro";
+            this.CClaveLibro.MinimumWidth = 6;
+            this.CClaveLibro.Name = "CClaveLibro";
+            this.CClaveLibro.ReadOnly = true;
+            // 
+            // CTitulo
+            // 
+            this.CTitulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CTitulo.DataPropertyName = "Titulo";
+            this.CTitulo.HeaderText = "Título";
+            this.CTitulo.MinimumWidth = 6;
+            this.CTitulo.Name = "CTitulo";
+            this.CTitulo.ReadOnly = true;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // FrmRegistroPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 658);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.BtnCrearPrestamo);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,8 +231,14 @@
             this.Name = "FrmRegistroPrestamo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Prestamo";
+            this.Load += new System.EventHandler(this.FrmRegistroPrestamo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgListaLibros)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -136,5 +252,14 @@
         private System.Windows.Forms.DateTimePicker DtimerDevolucion;
         private System.Windows.Forms.TextBox TxtPersona;
         private System.Windows.Forms.Button BtnCrearPrestamo;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.DataGridView DtgListaLibros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CClaveLibro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTitulo;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

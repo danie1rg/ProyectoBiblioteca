@@ -344,7 +344,33 @@ namespace ProyectoProgra5.Formularios
             }
         }
 
+        private void TxtContrasenna_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.CaracteresTexto(e,true);
+        }
+
+        private void TxtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.CaracteresTexto(e, false, true);
+        }
+
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.CaracteresTexto(e, true);
+        }
+
+        private void TxtEmail_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TxtEmail.Text.Trim()))
+            {
+                if (!Validaciones.ValidarEmail(TxtEmail.Text.Trim()))
+                {
+                    MessageBox.Show("El formato del correo es incorrecto", "Error de validación", MessageBoxButtons.OK);
+                    TxtEmail.Focus();
 
 
+                }
+            }
+        }
     }
 }

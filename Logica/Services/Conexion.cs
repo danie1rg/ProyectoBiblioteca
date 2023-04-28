@@ -83,6 +83,7 @@ namespace Logica.Services
                 MyAdaptador.Fill(Retorno);
                 if (CargarEsquema)
                 {
+                    Retorno = new DataTable();
                     MyAdaptador.FillSchema(Retorno, SchemaType.Source);
                 }
             }

@@ -63,7 +63,7 @@
             this.label1.Location = new System.Drawing.Point(64, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.Size = new System.Drawing.Size(73, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar";
             // 
@@ -72,7 +72,7 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.DarkGreen;
             this.txtBuscar.Location = new System.Drawing.Point(166, 19);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(358, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(358, 30);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
@@ -84,9 +84,9 @@
             this.CboxVerActivos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CboxVerActivos.Location = new System.Drawing.Point(600, 21);
             this.CboxVerActivos.Name = "CboxVerActivos";
-            this.CboxVerActivos.Size = new System.Drawing.Size(175, 24);
+            this.CboxVerActivos.Size = new System.Drawing.Size(240, 36);
             this.CboxVerActivos.TabIndex = 4;
-            this.CboxVerActivos.Text = "Ver Usuarios Activos";
+            this.CboxVerActivos.Text = "Ver Libros Activos";
             this.CboxVerActivos.UseVisualStyleBackColor = true;
             this.CboxVerActivos.CheckedChanged += new System.EventHandler(this.CboxVerActivos_CheckedChanged_1);
             // 
@@ -119,7 +119,7 @@
             this.CbAutores.FormattingEnabled = true;
             this.CbAutores.Location = new System.Drawing.Point(202, 183);
             this.CbAutores.Name = "CbAutores";
-            this.CbAutores.Size = new System.Drawing.Size(200, 28);
+            this.CbAutores.Size = new System.Drawing.Size(200, 33);
             this.CbAutores.TabIndex = 18;
             // 
             // CbCategoria
@@ -128,7 +128,7 @@
             this.CbCategoria.FormattingEnabled = true;
             this.CbCategoria.Location = new System.Drawing.Point(202, 143);
             this.CbCategoria.Name = "CbCategoria";
-            this.CbCategoria.Size = new System.Drawing.Size(200, 28);
+            this.CbCategoria.Size = new System.Drawing.Size(200, 33);
             this.CbCategoria.TabIndex = 17;
             // 
             // BtnLimpiar
@@ -183,7 +183,7 @@
             // 
             this.TxtPaginas.Location = new System.Drawing.Point(202, 231);
             this.TxtPaginas.Name = "TxtPaginas";
-            this.TxtPaginas.Size = new System.Drawing.Size(200, 26);
+            this.TxtPaginas.Size = new System.Drawing.Size(200, 30);
             this.TxtPaginas.TabIndex = 12;
             this.TxtPaginas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPaginas_KeyPress);
             // 
@@ -191,7 +191,7 @@
             // 
             this.TxtTitulo.Location = new System.Drawing.Point(202, 87);
             this.TxtTitulo.Name = "TxtTitulo";
-            this.TxtTitulo.Size = new System.Drawing.Size(200, 26);
+            this.TxtTitulo.Size = new System.Drawing.Size(200, 30);
             this.TxtTitulo.TabIndex = 9;
             this.TxtTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTitulo_KeyPress);
             // 
@@ -200,7 +200,7 @@
             this.TxtLibroId.Location = new System.Drawing.Point(202, 42);
             this.TxtLibroId.Name = "TxtLibroId";
             this.TxtLibroId.ReadOnly = true;
-            this.TxtLibroId.Size = new System.Drawing.Size(200, 26);
+            this.TxtLibroId.Size = new System.Drawing.Size(200, 30);
             this.TxtLibroId.TabIndex = 8;
             this.TxtLibroId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -209,7 +209,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(36, 231);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 20);
+            this.label6.Size = new System.Drawing.Size(173, 25);
             this.label6.TabIndex = 4;
             this.label6.Text = "Cantidad Páginas:";
             // 
@@ -218,7 +218,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(36, 191);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 20);
+            this.label5.Size = new System.Drawing.Size(65, 25);
             this.label5.TabIndex = 3;
             this.label5.Text = "Autor:";
             // 
@@ -227,7 +227,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(36, 146);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 20);
+            this.label4.Size = new System.Drawing.Size(103, 25);
             this.label4.TabIndex = 2;
             this.label4.Text = "Categoria:";
             // 
@@ -236,7 +236,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(36, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.Size = new System.Drawing.Size(66, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "Titulo:";
             // 
@@ -245,7 +245,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(36, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 20);
+            this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Código Libro:";
             // 
@@ -266,6 +266,7 @@
             this.DgLista.Name = "DgLista";
             this.DgLista.ReadOnly = true;
             this.DgLista.RowHeadersVisible = false;
+            this.DgLista.RowHeadersWidth = 51;
             this.DgLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgLista.Size = new System.Drawing.Size(799, 298);
             this.DgLista.TabIndex = 6;
@@ -277,14 +278,17 @@
             // 
             this.CClaveLibro.DataPropertyName = "ClaveLibro";
             this.CClaveLibro.HeaderText = "Clave";
+            this.CClaveLibro.MinimumWidth = 6;
             this.CClaveLibro.Name = "CClaveLibro";
             this.CClaveLibro.ReadOnly = true;
+            this.CClaveLibro.Width = 125;
             // 
             // CTitulo
             // 
             this.CTitulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CTitulo.DataPropertyName = "Titulo";
             this.CTitulo.HeaderText = "Titulo";
+            this.CTitulo.MinimumWidth = 6;
             this.CTitulo.Name = "CTitulo";
             this.CTitulo.ReadOnly = true;
             // 
@@ -293,6 +297,7 @@
             this.CNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.CNombre.DataPropertyName = "Nombre";
             this.CNombre.HeaderText = "Autor";
+            this.CNombre.MinimumWidth = 6;
             this.CNombre.Name = "CNombre";
             this.CNombre.ReadOnly = true;
             this.CNombre.Width = 120;
@@ -302,6 +307,7 @@
             this.CDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.CDescripcion.DataPropertyName = "Descripcion";
             this.CDescripcion.HeaderText = "Genéro";
+            this.CDescripcion.MinimumWidth = 6;
             this.CDescripcion.Name = "CDescripcion";
             this.CDescripcion.ReadOnly = true;
             this.CDescripcion.Width = 150;
@@ -311,13 +317,14 @@
             this.CCantidadPaginas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.CCantidadPaginas.DataPropertyName = "CantidadPaginas";
             this.CCantidadPaginas.HeaderText = "Paginas";
+            this.CCantidadPaginas.MinimumWidth = 6;
             this.CCantidadPaginas.Name = "CCantidadPaginas";
             this.CCantidadPaginas.ReadOnly = true;
             this.CCantidadPaginas.Width = 120;
             // 
             // FrmGestionLibro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 711);
             this.Controls.Add(this.DgLista);
